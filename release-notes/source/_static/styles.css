@@ -1,45 +1,23 @@
-@import url("default.css");
+@import url("sphinxdoc.css");
+@import url("Liberation-Mono/stylesheet.css");
+@import url("Open-Sans/stylesheet.css");
 
-th {
-	background-color: #f2f2f2;
+body {
+    font-family: 'OpenSansRegular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva',
+                 'Verdana', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
-table.docutils td {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #AAAAAA;
+cite, code, tt {
+    font-family: 'LiberationMonoRegular', 'Consolas', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', monospace;
 }
 
-table.docutils tr.row-odd {
-    background-color: #eee;
+pre {
+    font-family: 'LiberationMonoRegular', 'Consolas', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', monospace;
 }
 
-table.docutils tr:hover {
-    background-color: lightyellow;
-}
-
-table.docutils th, table.docutils td {
-    text-align: center;
-}
-
-table.docutils td:first-child {
-    text-align: left;
-    border-left-style: none;
-}
-
-table.docutils td:last-child {
-    border-right-style: none;
-}
-
-#test-results span.test_result.success {
-    color: green;
-}
-
-#test-results span.test_result.error {
-    color: red;
-}
-
-#test-results span.test_result.warning {
-    color: orange;
-    font-weight: bold;
+.viewcode-back {
+    font-family: 'OpenSansRegular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva',
+                 'Verdana', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
