@@ -771,10 +771,12 @@ dt {
   margin-left: 0px;
 }
 #header nav li.downloads {
+  visibility: hidden;
   float: right;
   margin-left: 6px;
 }
 #header nav li.title {
+  visibility: hidden;
   float: right;
   margin-right: 10px;
   font-size: 11px;
