@@ -1,3 +1,6 @@
 *~
+*.png
+*.gif
+*.jpg
 *.py[cod]
 build/
