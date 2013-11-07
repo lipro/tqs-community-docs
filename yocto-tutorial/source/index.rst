@@ -6,16 +6,9 @@
 TQ Systems Yocto Project Tutorial
 =================================
 
-.. only:: html
-
-   Contents:
-
-.. globaltoc::
-   :maxdepth: 3
-
 .. toctree::
    :numbered:
-   :maxdepth: 3
+   :maxdepth: 2
 
    introduction
    build-and-boot

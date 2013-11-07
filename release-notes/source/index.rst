@@ -6,13 +6,6 @@
 TQ Systems Community BSP Release Notes
 ======================================
 
-.. only:: html
-
-   Contents:
-
-.. globaltoc::
-   :maxdepth: 2
-
 .. toctree::
    :maxdepth: 2
 

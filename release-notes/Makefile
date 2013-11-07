@@ -57,7 +57,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
-clean: clean-pyc clean-images
+clean: clean-images
 	-rm -rf $(BUILDDIR)/*
 
 html: images-png
@@ -201,6 +201,3 @@ clean-png:
 	-rm $(PNGs)
 
 clean-images: clean-pdf clean-png
-
-clean-pyc:
-	-find . -name "*.pyc" -print -exec rm -rf {} \;
