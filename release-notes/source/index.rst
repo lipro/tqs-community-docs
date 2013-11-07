@@ -21,12 +21,3 @@ TQ Systems Community BSP Release Notes
 .. ===========
 
 .. .. todolist::
-
-
-.. Indices and tables
-.. ==================
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
-
