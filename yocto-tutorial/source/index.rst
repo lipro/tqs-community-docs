@@ -6,13 +6,13 @@
 TQ Systems Yocto Project Tutorial
 =================================
 
-**Revision Notice**
-
 .. list-table::
    :widths: 20 10
    :header-rows: 0
    :stub-columns: 1
 
+   * - Revision Notice
+     -
    * - Version:
      - |version|
    * - Release:

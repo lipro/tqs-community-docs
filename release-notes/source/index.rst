@@ -6,13 +6,13 @@
 TQ Systems Community BSP Release Notes
 ======================================
 
-**Revision Notice**
-
 .. list-table::
    :widths: 20 10
-   :header-rows: 0
+   :header-rows: 1
    :stub-columns: 1
 
+   * - Revision Notice
+     -
    * - Version:
      - |version|
    * - Release:
