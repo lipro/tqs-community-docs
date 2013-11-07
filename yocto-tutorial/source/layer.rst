@@ -3,6 +3,8 @@
 Creating a new Layer
 ====================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 It is suggested to create a layer when creating or modifying any
 metadata file (recipe, configuration file or class). The main reason is
 simple: modularity. In the other hand, make sure your new metadata has

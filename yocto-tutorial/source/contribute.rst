@@ -1,6 +1,8 @@
 Contributing to the TQ Systems Yocto Project
 ============================================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 The Yocto Project is open-source, so anyone can contribute. No matter
 what your contribution is (bug fixing or new metadata), contributions
 are sent through patches to a community list. Many eyes will look into

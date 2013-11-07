@@ -3,6 +3,8 @@
 Build and Boot your TQ Systems Yocto Image
 ==========================================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 * Check
   `required <http://www.yoctoproject.org/docs/1.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system>`_
   packages for your Linux Distribution and install them.

@@ -1,6 +1,8 @@
 Bitbake Metadata
 ================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 BitBake handles the parsing and execution of the data files. The data
 itself is of various types:
 

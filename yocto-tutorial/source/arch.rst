@@ -1,6 +1,8 @@
 Yocto Architecture
 ==================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 See `introducing the Yocto Project`_ and the
 `general Yocto Project Development Environment figure`_
 for more detailed informations:

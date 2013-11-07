@@ -3,6 +3,8 @@
 Patching the Linux Kernel
 =========================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 The Linux Kernel is just another recipe for Yocto, so learning to patch
 it you learn to patch any other package. In the other hand, Yocto
 **should not** be used for package development, but in those rare cases

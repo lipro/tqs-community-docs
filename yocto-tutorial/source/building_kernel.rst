@@ -1,6 +1,8 @@
 Building the Kernel Manually
 ============================
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 * To setup the Yocto environment, from the BASE folder run:
 
 ::

@@ -1,6 +1,8 @@
 Yocto Folders
 =============
 
+.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+
 * **tqs-community-bsp**: Base (BASE) directory where all Yocto data
   resides (recipes, source code, built packages, images, etc)
 
