@@ -20,6 +20,12 @@ pre {
 
 div.bodywrapper {
     margin: 0 440px 0 0;
+    min-height: 740px;
+}
+
+div.sphinxsidebarwrapper {
+    position: fixed;
+    min-width: 410px;
 }
 
 div.sphinxsidebar {
