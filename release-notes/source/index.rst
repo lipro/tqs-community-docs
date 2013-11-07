@@ -6,6 +6,19 @@
 TQ Systems Community BSP Release Notes
 ======================================
 
+**Revision Notice**
+
+.. list-table::
+   :widths: 20 10
+   :header-rows: 0
+   :stub-columns: 1
+
+   * - Version:
+     - |version|
+   * - Release:
+     - |release|
+
+
 .. toctree::
    :maxdepth: 2
 
