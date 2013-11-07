@@ -106,7 +106,10 @@ html_theme_options = {
 
     # If true, license referer is shown in the HTML footer. Default is False.
     "show_licref": True,
-    "licref": "Creative Commons Attribution-ShareAlike 3.0 Unported (CC-BY-SA-3.0)"
+    "licref": "Creative Commons Attribution-ShareAlike 3.0 Unported License",
+    "licref_href": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "licref_image": "http://i.creativecommons.org/l/by-sa/3.0/80x15.png",
+    #"licref_image": "http://i.creativecommons.org/l/by-sa/3.0/88x31.png",
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
