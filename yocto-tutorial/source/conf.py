@@ -190,14 +190,23 @@ htmlhelp_basename = 'TQSystemsYoctoProjectTutorialdoc'
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-'papersize': 'a4paper',
+    # The paper size ('letterpaper' or 'a4paper').
+    'papersize': 'a4paper',
 
-# The font size ('10pt', '11pt' or '12pt').
-'pointsize': '11pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    'pointsize': '11pt',
 
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
+    # Additional stuff for the LaTeX preamble.
+    'inputenc': '',
+    'utf8extra': '',
+    'preamble': '''
+
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans Condensed}
+\setsansfont{DejaVu Sans Condensed}
+\setmonofont{DejaVu Sans Mono}
+\setromanfont{DejaVu Sans Condensed}
+''',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
