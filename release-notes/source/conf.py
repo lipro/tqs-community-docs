@@ -195,7 +195,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'TQSystemsCommunityBSPReleaseNotes.tex', u'TQ Systems Community BSP Release Notes Documentation',
+  ('index', 'TQSystemsCommunityBSPReleaseNotes.tex', u'TQ Systems Community BSP Release Notes',
    u'TQ Systems Community BSP Team', 'manual'),
 ]
 
@@ -225,7 +225,7 @@ latex_logo = "_images/tqs-logo.pdf"
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'tqsystemscommunitybspreleasenotes', u'TQ Systems Community BSP Release Notes Documentation',
+    ('index', 'tqsystemscommunitybspreleasenotes', u'TQ Systems Community BSP Release Notes',
      [u'TQ Systems Community BSP Team'], 1)
 ]
 
@@ -239,7 +239,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'TQSystemsCommunityBSPReleaseNotes', u'TQ Systems Community BSP Release Notes Documentation',
+  ('index', 'TQSystemsCommunityBSPReleaseNotes', u'TQ Systems Community BSP Release Notes',
    u'TQ Systems Community BSP Team', 'TQSystemsCommunityBSPReleaseNotes', 'One line description of project.',
    'Miscellaneous'),
 ]
