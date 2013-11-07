@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to TQ Systems Community BSP Release Notes's documentation!
-==================================================================
+TQ Systems Community BSP Release Notes
+======================================
 
 .. only:: html
 
