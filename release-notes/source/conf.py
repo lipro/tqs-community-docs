@@ -101,6 +101,10 @@ html_theme = 'sphinxdoc-ext'
 # documentation.
 html_theme_options = {
     "sidebarwidth": 440,
+
+    # If true, license referer is shown in the HTML footer. Default is False.
+    "show_licref": True,
+    "licref": "Creative Commons Attribution-ShareAlike 3.0 Unported (CC-BY-SA-3.0)"
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
