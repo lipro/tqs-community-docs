@@ -12,3 +12,13 @@
 {# put the sidebar before the body #}
 {% block sidebar1 %}{{ sidebar() }}{% endblock %}
 {% block sidebar2 %}{% endblock %}
+
+{# rewrite the footer #}
+{%- block footer %}
+    {%- if theme_show_licref|tobool %}
+      <div class="footer" id="license">
+        {% trans licref=theme_licref|e %}{{ licref }}.{% endtrans %}
+      </div>
+    {%- endif %}
+    {{ super() }}
+{%- endblock %}

@@ -126,10 +126,14 @@ div.sphinxsidebar ul ul {
 div.footer {
     background-color: #E3EFF1;
     color: #86989B;
-    padding: 3px 8px 3px 0;
+    padding: 3px 8px 3px 8px;
     clear: both;
     font-size: 0.8em;
     text-align: right;
+}
+
+#license {
+    text-align: center;
 }
 
 div.footer a {

@@ -1,0 +1,13 @@
+{% extends "!layout.html" %}
+{% block rootrellink %}
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    {{ super() }}
+{% endblock %}
+{%- block footer %}
+    <div class="footer">
+    {%- if show_license %}
+      WASNDAS
+    {%- endif %}
+    </div>
+    {{ super() }}
+{% endblock %}
