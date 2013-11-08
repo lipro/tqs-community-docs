@@ -15,10 +15,12 @@
 
 {# rewrite the footer #}
 {%- block footer %}
+    <div class="sphinxfooterwrapper">
     {%- if theme_show_licref|tobool %}
       <div class="footer" id="license">
         {% trans phrase=theme_licref|e, link=theme_licref_href|e, image=theme_licref_image|e %}<a rel="license" href="{{ link }}"><img alt="License Logo" style="border-width:0;vertical-align:middle;padding: 0px 8px;" src="{{ image }}" /></a>This work is licensed under a <a rel="license" href="{{ link }}">{{ phrase }}</a>.{% endtrans %}
       </div>
     {%- endif %}
     {{ super() }}
+    </div>
 {%- endblock %}
