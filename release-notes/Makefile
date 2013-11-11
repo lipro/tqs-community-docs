@@ -6,7 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
-BUILDNAME     = AlereCommunityBSPReleaseNotes
+BUILDNAME     = TQSystemsCommunityBSPReleaseNotes
 
 # Internal variables.
 SOURCEDIR       = source
