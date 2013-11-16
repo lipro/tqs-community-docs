@@ -1,6 +1,12 @@
 *~
+*.swp
 *.png
 *.gif
 *.jpg
+*.pdf
 *.py[cod]
 build/
+bin/
+include/
+lib/
+local/
