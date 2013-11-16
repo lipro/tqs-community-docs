@@ -12,8 +12,15 @@
  */
 
 @import url("basic.css");
+@import url("dejavuserif_book_macroman/stylesheet.css");
+@import url("dejavuserif_bold_macroman/stylesheet.css");
+@import url("dejavuserif_italic_macroman/stylesheet.css");
 @import url("dejavusans_book_macroman/stylesheet.css");
+@import url("dejavusans_bold_macroman/stylesheet.css");
+@import url("dejavusans_oblique_macroman/stylesheet.css");
 @import url("dejavusansmono_book_macroman/stylesheet.css");
+@import url("dejavusansmono_bold_macroman/stylesheet.css");
+@import url("dejavusansmono_oblique_macroman/stylesheet.css");
 
 /* -- page layout ----------------------------------------------------------- */
 

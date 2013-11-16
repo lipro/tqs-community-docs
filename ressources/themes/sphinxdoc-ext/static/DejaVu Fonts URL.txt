@@ -1,3 +1,4 @@
+http://www.fontsquirrel.com/fontfacekit/DejaVu-Serif
 http://www.fontsquirrel.com/fontfacekit/DejaVu-Sans
 http://www.fontsquirrel.com/fontfacekit/DejaVu-Sans-Mono
 
