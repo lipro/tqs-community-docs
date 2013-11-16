@@ -13,6 +13,17 @@
 {% block sidebar1 %}{{ sidebar() }}{% endblock %}
 {% block sidebar2 %}{% endblock %}
 
+{# rewrite the sidebarlogo #}
+{%- block sidebarlogo %}
+{%- if logo %}
+  <p class="logo">
+    <!-- <a href="{{ pathto(master_doc) }}"> -->
+      <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+    <!-- </a> -->
+  </p>
+{%- endif %}
+{%- endblock %}
+
 {# rewrite the footer #}
 {%- block footer %}
     <div class="sphinxfooterwrapper">
