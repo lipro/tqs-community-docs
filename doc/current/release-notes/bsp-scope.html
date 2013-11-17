@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. BSP Scope &mdash; TQ Systems Community BSP 1.x-current</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.x-current',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="up" title="TQ Systems Community BSP Release Notes" href="index.html" />
+    <link rel="next" title="2. Linux Kernel" href="kernel-linux.html" />
+    <link rel="prev" title="TQ Systems Community BSP Release Notes" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="kernel-linux.html" title="2. Linux Kernel"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="TQ Systems Community BSP Release Notes"
+             accesskey="P">previous</a> |</li>
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+
+          <li><a href="index.html" accesskey="U">TQ Systems Community BSP Release Notes</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <p class="logo">
+    <!-- <a href="../index.html"> -->
+      <img class="logo" src="../_static/lpn-logo.png" alt="Logo"/>
+    <!-- </a> -->
+  </p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. BSP Scope</a><ul>
+<li><a class="reference internal" href="#priority-of-dependent-layers">1.1. Priority of Dependent Layers</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">TQ Systems Community BSP Release Notes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="kernel-linux.html"
+                        title="next chapter">2. Linux Kernel</a></p>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bsp-scope">
+<h1>1. BSP Scope<a class="headerlink" href="#bsp-scope" title="Permalink to this headline">¶</a></h1>
+<p>The scope of this release includes meta-tqs-arm.
+Please, see in next table the complete supported board list.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="52%" />
+<col width="10%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Name</th>
+<th class="head">SoC</th>
+<th class="head">Layer</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>qemuarmv6</td>
+<td>arm_versatile_1136jfs</td>
+<td>&nbsp;</td>
+<td>meta-tqs-arm</td>
+</tr>
+<tr class="row-odd"><td>tqma35</td>
+<td>TQ System i.MX35 Embedded module (tqma35)</td>
+<td>i.MX35</td>
+<td>meta-tqs-arm</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="priority-of-dependent-layers">
+<h2>1.1. Priority of Dependent Layers<a class="headerlink" href="#priority-of-dependent-layers" title="Permalink to this headline">¶</a></h2>
+<p class="blockdiag">
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    alt="None" width="448" height="280"><?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 448 280" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc />
+  <rect fill="rgb(255,255,255)" height="60" style="filter:url(#filter_blur)" width="144" x="56" y="30" />
+  <rect fill="rgb(255,255,255)" height="140" style="filter:url(#filter_blur)" width="336" x="56" y="110" />
+  <path d="M 75 46 L 187 46 A8,8 0 0 1 195 54 L 195 78 A8,8 0 0 1 187 86 L 75 86 A8,8 0 0 1 67 78 L 67 54 A8,8 0 0 1 75 46" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 75 126 L 187 126 A8,8 0 0 1 195 134 L 195 158 A8,8 0 0 1 187 166 L 75 166 A8,8 0 0 1 67 158 L 67 134 A8,8 0 0 1 75 126" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 126 L 379 126 A8,8 0 0 1 387 134 L 387 158 A8,8 0 0 1 379 166 L 267 166 A8,8 0 0 1 259 158 L 259 134 A8,8 0 0 1 267 126" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 267 206 L 379 206 A8,8 0 0 1 387 214 L 387 238 A8,8 0 0 1 379 246 L 267 246 A8,8 0 0 1 259 238 L 259 214 A8,8 0 0 1 267 206" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <path d="M 72 40 L 184 40 A8,8 0 0 1 192 48 L 192 72 A8,8 0 0 1 184 80 L 72 80 A8,8 0 0 1 64 72 L 64 48 A8,8 0 0 1 72 40" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="bold" x="81" y="66">meta-tqs-arm</text>
+  <path d="M 72 120 L 184 120 A8,8 0 0 1 192 128 L 192 152 A8,8 0 0 1 184 160 L 72 160 A8,8 0 0 1 64 152 L 64 128 A8,8 0 0 1 72 120" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="90" y="145">meta-fsl-arm</text>
+  <path d="M 264 120 L 376 120 A8,8 0 0 1 384 128 L 384 152 A8,8 0 0 1 376 160 L 264 160 A8,8 0 0 1 256 152 L 256 128 A8,8 0 0 1 264 120" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="288" y="147">poky-meta</text>
+  <path d="M 264 200 L 376 200 A8,8 0 0 1 384 208 L 384 232 A8,8 0 0 1 376 240 L 264 240 A8,8 0 0 1 256 232 L 256 208 A8,8 0 0 1 264 200" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="270" y="227">poky-meta-yocto</text>
+  <path d="M 128 80 L 128 112" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="128,119 124,112 132,112 128,119" stroke="rgb(0,0,0)" />
+  <path d="M 192 140 L 248 140" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,140 248,136 248,144 255,140" stroke="rgb(0,0,0)" />
+  <path d="M 192 140 L 224 140" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 140 L 224 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 224 220 L 248 220" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,220 248,216 248,224 255,220" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="16" font-style="normal" font-weight="normal" x="108" y="36">PRI:6</text>
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="16" font-style="normal" font-weight="normal" x="204" y="116">PRI:5</text>
+</svg>
+
+    </svg></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>meta-tqs-arm</td>
+<td>OpenEmbedded/Yocto BSP layer for TQ Systems ARM based platforms (<a class="reference external" href="index.html">this</a>).</td>
+</tr>
+<tr class="row-odd"><td>meta-fsl-arm</td>
+<td><a class="reference external" href="https://github.com/Freescale/meta-fsl-arm">OpenEmbedded/Yocto BSP layer for Freescale&#8217;s ARM platforms.</a></td>
+</tr>
+<tr class="row-even"><td>poky-meta</td>
+<td><a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta">Poky Build Tool and Metadata.</a></td>
+</tr>
+<tr class="row-odd"><td>poky-meta-yocto</td>
+<td><a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta-yocto">Yocto Build Tool and Metadata.</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="kernel-linux.html" title="2. Linux Kernel"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="TQ Systems Community BSP Release Notes"
+             >previous</a> |</li>
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+
+          <li><a href="index.html" >TQ Systems Community BSP Release Notes</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="sphinxfooterwrapper">
+      <div class="footer" id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="License Logo" style="border-width:0;vertical-align:middle;padding: 0px 8px;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+      </div>
+    
+    <div class="footer">
+        &copy; Copyright 2013, Li-Pro.Net.
+    </div>
+    </div>
+  </body>
+</html>

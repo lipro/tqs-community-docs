@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6. Patching the Linux Kernel &mdash; TQ Systems Community BSP 1.x-current</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.x-current',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="up" title="TQ Systems Yocto Project Tutorial" href="index.html" />
+    <link rel="next" title="7. Building the Kernel Manually" href="building-kernel.html" />
+    <link rel="prev" title="5. Creating a new Layer" href="layer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="building-kernel.html" title="7. Building the Kernel Manually"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="layer.html" title="5. Creating a new Layer"
+             accesskey="P">previous</a> |</li>
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+
+          <li><a href="index.html" accesskey="U">TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <p class="logo">
+    <!-- <a href="../index.html"> -->
+      <img class="logo" src="../_static/lpn-logo.png" alt="Logo"/>
+    <!-- </a> -->
+  </p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="layer.html"
+                        title="previous chapter">5. Creating a new Layer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="building-kernel.html"
+                        title="next chapter">7. Building the Kernel Manually</a></p>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patching-the-linux-kernel">
+<span id="patching-kernel"></span><h1>6. Patching the Linux Kernel<a class="headerlink" href="#patching-the-linux-kernel" title="Permalink to this headline">¶</a></h1>
+<p>The Linux Kernel is just another recipe for Yocto, so learning to patch
+it you learn to patch any other package. In the other hand, Yocto
+<strong>should not</strong> be used for package development, but in those rare cases
+follow the steps below. It is assumed that you have already build the
+package you want to patch.</p>
+<ul class="simple">
+<li>Create the patch or patches. In this example we are patching the
+Linux kernel for <a class="reference external" href="http://support.tq-group.com/doku.php?id=en:arm:tqma35">tqma35</a> machine; in other words, the value of
+MACHINE on the <tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt> is
+<tt class="docutils literal"><span class="pre">MACHINE</span> <span class="pre">??=</span> <span class="pre">'tqma35_'</span></tt>. In case you already have the patches,
+make sure these can be nicely applied with the commands
+<tt class="docutils literal"><span class="pre">git</span> <span class="pre">apply</span> <span class="pre">--check</span> <span class="pre">&lt;PATCH_NAME&gt;</span></tt>, and jump this step.</li>
+</ul>
+<div class="highlight-python"><pre>build $ cd tmp/work/tqma35-poky-linux-gnueabi/\
+linux-tqs/2.6.34.14+gitAUTOINC+6b4ea726b39f32041ac4d2dd03cf056c57b638ac-r32.1/git
+build $ # Edit any files you want to change
+build $ git add &lt;modified file 1&gt; &lt;modified file 2&gt; ..  # Select the files you
+                                                        # want to commit
+build $ git commit -s -m '&lt;your commit's title&gt;'        # Create the commit
+build $ git format-patch -1                             # Create the patch
+
+# e.g. 0001-calibrate-Add-printk-example.patch</pre>
+</div>
+<ul class="simple">
+<li>Create a new layer (see section <a class="reference internal" href="layer.html#create-new-layer"><em>Creating a new Layer</em></a>)</li>
+<li>On the new layer (e.g. <tt class="docutils literal"><span class="pre">meta-tqs-custom</span></tt>), create the corresponding
+subfolders and the <tt class="docutils literal"><span class="pre">.bbappend</span></tt> file:</li>
+</ul>
+<div class="highlight-python"><pre>sources $ mkdir -p meta-tqs-custom/recipes-kernel/linux/linux-tqs-2.6.34.14
+sources $ cat &gt; meta-tqs-custom/recipes-kernel/linux/linux-tqs_git.bbappend
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
+SRC_URI += "file://0001-calibrate-Add-printk-example.patch"
+PRINC := "${@int(PRINC) + 1}"
+^d</pre>
+</div>
+<ul class="simple">
+<li>Move the patch to the new layer</li>
+</ul>
+<div class="highlight-python"><pre>sources $ mv ../build/tmp/work/tqma35-poky-linux-gnueabi/linux-tqs/\
+2.6.34.14+gitAUTOINC+6b4ea726b39f32041ac4d2dd03cf056c57b638ac-r32.1/\
+git/0001-calibrate-Add-printk-example.patch \
+    meta-tqs-custom/recipes-kernel/linux/linux-tqs-2.6.34.14</pre>
+</div>
+<ul class="simple">
+<li>Setup the enviroment and clean previous package&#8217;s build data (sstate)</li>
+</ul>
+<div class="highlight-python"><pre>tqs-community-bsp $ . setup-environment build
+build $ bitbake -c cleansstate linux-tqs</pre>
+</div>
+<ul class="simple">
+<li>Compile and Deploy</li>
+</ul>
+<div class="highlight-python"><pre>build $ bitbake -f -c compile linux-tqs
+build $ bitbake -c deploy linux-tqs</pre>
+</div>
+<ul>
+<li><p class="first">Insert the SD into your host and copy the <tt class="docutils literal"><span class="pre">uImage</span></tt> into the first
+partition. Do not forget to unmount the partition before removing the
+card!</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">The issue <cite>SD Card preperation</cite> with new Linux kernel needs
+to be evaluated! Do not yet apply this description!</p>
+</div>
+</li>
+</ul>
+<div class="highlight-python"><pre>build $ sudo cp tmp/deploy/images/uImage /media/boot</pre>
+</div>
+<ul class="simple">
+<li>Insert the SD into your board and test your change.</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="building-kernel.html" title="7. Building the Kernel Manually"
+             >next</a></li>
+        <li class="right" >
+          <a href="layer.html" title="5. Creating a new Layer"
+             >previous</a> |</li>
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+
+          <li><a href="index.html" >TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="sphinxfooterwrapper">
+      <div class="footer" id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="License Logo" style="border-width:0;vertical-align:middle;padding: 0px 8px;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+      </div>
+    
+    <div class="footer">
+        &copy; Copyright 2013, Li-Pro.Net.
+    </div>
+    </div>
+  </body>
+</html>

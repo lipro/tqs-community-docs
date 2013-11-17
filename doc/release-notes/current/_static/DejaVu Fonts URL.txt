@@ -1,8 +1,0 @@
-http://www.fontsquirrel.com/fontfacekit/DejaVu-Sans
-http://www.fontsquirrel.com/fontfacekit/DejaVu-Sans-Mono
-
-http://www.fontsquirrel.com/fontfacekit/ubuntu
-http://www.fontsquirrel.com/fontfacekit/ubuntu-mono
-http://www.fontsquirrel.com/fontfacekit/Ubuntu-Titling
-http://www.fontsquirrel.com/fontfacekit/oxygen
-http://www.fontsquirrel.com/fontfacekit/oxygen-mono

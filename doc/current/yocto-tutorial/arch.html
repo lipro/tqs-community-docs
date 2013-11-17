@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3. Yocto Architecture &mdash; TQ Systems Community BSP 1.x-current</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.x-current',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="up" title="TQ Systems Yocto Project Tutorial" href="index.html" />
+    <link rel="next" title="4. Bitbake Metadata" href="meta-input.html" />
+    <link rel="prev" title="2. Yocto Folders" href="folders.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="meta-input.html" title="4. Bitbake Metadata"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="folders.html" title="2. Yocto Folders"
+             accesskey="P">previous</a> |</li>
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+
+          <li><a href="index.html" accesskey="U">TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <p class="logo">
+    <!-- <a href="../index.html"> -->
+      <img class="logo" src="../_static/lpn-logo.png" alt="Logo"/>
+    <!-- </a> -->
+  </p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3. Yocto Architecture</a><ul>
+<li><a class="reference internal" href="#yocto-release-history">3.1. Yocto Release History</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="folders.html"
+                        title="previous chapter">2. Yocto Folders</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="meta-input.html"
+                        title="next chapter">4. Bitbake Metadata</a></p>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="yocto-architecture">
+<h1>3. Yocto Architecture<a class="headerlink" href="#yocto-architecture" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="http://www.yoctoproject.org/docs/1.5/yocto-project-qs/yocto-project-qs.html#yp-intro">introducing the Yocto Project</a> and the
+<a class="reference external" href="http://www.yoctoproject.org/docs/1.5/ref-manual/ref-manual.html#general-yocto-environment-figure">general Yocto Project Development Environment figure</a>
+for more detailed informations:</p>
+<div class="figure align-center">
+<img alt="" src="../_images/yocto-environment.svg" /></div>
+<div class="section" id="yocto-release-history">
+<h2>3.1. Yocto Release History<a class="headerlink" href="#yocto-release-history" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="http://wiki.yoctoproject.org/wiki/Releases">Yocto Project Releases</a> for more detailed (and latest) informations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="7%" />
+<col width="4%" />
+<col width="4%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Date</th>
+<th class="head">Yocto</th>
+<th class="head">Poky</th>
+<th class="head">BB</th>
+<th class="head">Links</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td></td>
+<td>2014-04-25</td>
+<td>1.6 <a class="footnote-reference" href="#id3" id="id1">[1]</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.6_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.6_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.6_Status">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.6_Overall_Test_Plan">Test Plan</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.6_Milestone_Test_Report">Test Report</a></td>
+</tr>
+<tr class="row-odd"><td>Dora <a class="footnote-reference" href="#id4" id="id2">[2]</a></td>
+<td>2013-10-18</td>
+<td>1.5</td>
+<td>10.0</td>
+<td>1.20</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.5_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.5_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.5_Status">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.5_Overall_Test_Plan">Test Plan</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.5_Milestone_Test_Report">Test Report</a></td>
+</tr>
+<tr class="row-even"><td>Dylan</td>
+<td>2013-04-26</td>
+<td>1.4</td>
+<td>9.0</td>
+<td>1.18</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.4_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.4_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.4_Status">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.4_Overall_Test_Plan">Test Plan</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.4_Milestone_Test_Report">Test Report</a></td>
+</tr>
+<tr class="row-odd"><td>Danny</td>
+<td>2012-10-26</td>
+<td>1.3</td>
+<td>8.0</td>
+<td>1.16</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.3_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.3_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.3_Status">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.3_Overall_Test_Plan">Test Plan</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.3_Milestone_Test_Report">Test Report</a></td>
+</tr>
+<tr class="row-even"><td>Denzil</td>
+<td>2012-04-27</td>
+<td>1.2</td>
+<td>7.0</td>
+<td>1.15</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.2_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.2_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.2_Status">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.2_Overall_Test_Plan">Test Plan</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.2_Milestone_Test_Report">Test Report</a></td>
+</tr>
+<tr class="row-odd"><td>Edison</td>
+<td>2011-10-06</td>
+<td>1.1</td>
+<td>6.0</td>
+<td>1.13</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.1_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.1_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.1_Release_Criteria">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.1_Overall_Test_Plan">Test Plan</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.1_Milestone_Test_Report">Test Report</a></td>
+</tr>
+<tr class="row-even"><td>Bernard</td>
+<td>2011-04-06</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>1.11</td>
+<td><a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Features">Features</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.0_Schedule">Schedule</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.0_Release_Criteria">Status</a>,
+<a class="reference external" href="http://wiki.yoctoproject.org/wiki/Yocto_1.0_Overall_Test_Plan">Test Plan</a></td>
+</tr>
+<tr class="row-odd"><td>Laverne</td>
+<td>&nbsp;</td>
+<td>0.9</td>
+<td>4.0</td>
+<td>1.11</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Purple</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3.2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Pinky</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3.1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Blinky</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3.0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Clyde</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2.0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Inky</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1.0</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>in planning</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>in development</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="meta-input.html" title="4. Bitbake Metadata"
+             >next</a></li>
+        <li class="right" >
+          <a href="folders.html" title="2. Yocto Folders"
+             >previous</a> |</li>
+    <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
+    
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+
+          <li><a href="index.html" >TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="sphinxfooterwrapper">
+      <div class="footer" id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="License Logo" style="border-width:0;vertical-align:middle;padding: 0px 8px;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+      </div>
+    
+    <div class="footer">
+        &copy; Copyright 2013, Li-Pro.Net.
+    </div>
+    </div>
+  </body>
+</html>
