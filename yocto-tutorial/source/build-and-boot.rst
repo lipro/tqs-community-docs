@@ -3,7 +3,13 @@
 Build and Boot your TQ Systems Yocto Image
 ==========================================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
 
 * Check
   `required <http://www.yoctoproject.org/docs/1.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system>`_
@@ -50,7 +56,8 @@ Build and Boot your TQ Systems Yocto Image
                                                         # take several hours.
     # e.g. bitbake core-image-minimal
 
-* Boot (e.g. ``core-image-minimal``) on the machine `qemuarmv6` with Yocto's ``runqemu``:
+* Boot (e.g. :option:`core-image-minimal`) on the machine
+  :option:`qemuarmv6` with Yocto's :program:`runqemu`:
 
 ::
 
@@ -58,7 +65,7 @@ Build and Boot your TQ Systems Yocto Image
                               tmp/deploy/images/zImage-qemuarmv6.bin \
                               tmp/deploy/images/core-image-minimal-qemuarmv6.ext3
 
-* Flash SD Card for machines other than `qemuarmv6`:
+* Flash SD Card for machines other than :option:`qemuarmv6`:
 
   .. todo::
 
@@ -82,8 +89,18 @@ Build and Boot your TQ Systems Yocto Image
 
 * Place your SD Card in the correct board's slot and boot!
 
-Found Errors? Subscribe and report it to
-`the author <mailto:rexut95@gmail.com?subject=[tqs-community-bsp] Error report>`_.
+
+.. only:: html
+
+   Found Errors? Subscribe and report it to
+   :email:`the author <linz@li-pro.net>`
+   with subject "[tqs-community-bsp] Error report: <your_msg>".
+
+.. only:: latex or man or texinfo or text
+
+   Found Errors? Subscribe and report it to
+   the author <linz@li-pro.net>
+   with subject "[tqs-community-bsp] Error report: <your_msg>".
 
 .. `meta-tqsystems <https://lists.yoctoproject.org/listinfo/meta-tqsystems>`_
 .. mailing list.

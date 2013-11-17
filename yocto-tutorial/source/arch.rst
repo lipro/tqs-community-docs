@@ -1,7 +1,13 @@
 Yocto Architecture
 ==================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
 
 See `introducing the Yocto Project`_ and the
 `general Yocto Project Development Environment figure`_

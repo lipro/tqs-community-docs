@@ -1,7 +1,13 @@
 Contributing to the TQ Systems Yocto Project
 ============================================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
 
 The Yocto Project is open-source, so anyone can contribute. No matter
 what your contribution is (bug fixing or new metadata), contributions
@@ -59,7 +65,7 @@ branch (e.g. ``fix_uboot_recipe``, ``new_gstreamer_recipe``, etc.).
 On the commit's log, the title must start with the filename change
 or introduced, then a brief description of the patch's goal,
 following with a long description. Make sure you follow the
-standards (type ``git log --pretty=oneline`` to see previous
+standards (type :program:`git log --pretty=oneline` to see previous
 commits).
 
 * Create a patch:
@@ -84,9 +90,9 @@ you change the ``--subject-prefix`` value.
 ::
 
     sources/meta-tqs-arm $ git send-email \
-        --to rexut95@gmail.com <patch>
+        --to linz@li-pro.net <patch>
 
-Where ``<patch>`` is the file created by ``git format-patch``.
+Where ``<patch>`` is the file created by :program:`git format-patch`.
 
 * Keep track of patch's responses on the mailing list. In case you need
   to rework your patch, repeat the steps but this time the patch's

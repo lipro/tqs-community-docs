@@ -3,7 +3,13 @@
 Creating a new Layer
 ====================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
 
 It is suggested to create a layer when creating or modifying any
 metadata file (recipe, configuration file or class). The main reason is

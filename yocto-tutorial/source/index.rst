@@ -7,29 +7,26 @@
 TQ Systems Yocto Project Tutorial
 =================================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
 
-.. sidebar:: Summary
+   .. sectionauthor:: |slz_obfuscated|
 
-   :Version: |version|
-   :Release: |release|
-   :Date: |today|
-   :Authors: **Stephan Linz**
-   :Target: users, developers and integrators
-   :Status: some mature, some in progress
+.. only:: latex or man or texinfo or text
 
-.. topic:: Yocto Tutorial
+   .. sectionauthor:: |slz_plain_text|
 
-   This document has the Yocto tutorial of the TQ Systems Community BSP
-   |version| which is a communty effort to start quick with it and learn
-   the build and design workflow.
+.. include:: docsummary.inc
+.. include:: docrevlog.inc
+
+.. topic:: Involved Components
 
    * TQ Systems embedded modules
    * Yocto related
    * General tutorial
 
-   This work is licensed under a Creative Commons Attribution-ShareAlike
-   3.0 Unported License (`CC-BY-SA-3.0`_).
+.. only:: latex
+
+   .. include:: doclegal.inc
 
 .. toctree::
    :numbered:
@@ -50,5 +47,7 @@ Things todo
 
 .. todolist::
 
+.. only:: man or texinfo or text
 
-.. _`CC-BY-SA-3.0`: http://creativecommons.org/licenses/by-sa/3.0/
+   .. include:: doclegal.inc
+

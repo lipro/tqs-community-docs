@@ -3,7 +3,13 @@
 Patching the Linux Kernel
 =========================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
 
 The Linux Kernel is just another recipe for Yocto, so learning to patch
 it you learn to patch any other package. In the other hand, Yocto

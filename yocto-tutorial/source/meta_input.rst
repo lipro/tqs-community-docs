@@ -1,7 +1,13 @@
 Bitbake Metadata
 ================
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
 
 BitBake handles the parsing and execution of the data files. The data
 itself is of various types:
@@ -83,7 +89,7 @@ Important variables:
 Build's layer configuration file ``build/conf/bblayers.conf``
 `````````````````````````````````````````````````````````````
 
-* Automatically created by the ``setup-environment`` script (see
+* Automatically created by the :program:`setup-environment` script (see
   section :ref:`build-and-boot`)
 
 * Only modified when adding a new layer:
@@ -225,12 +231,13 @@ Important variables:
 
 * IMAGE_FSTYPES_: Located on `qemu.inc`_. Defines the type of
   outputs for the Root Filesystem. Default is:
-  ``"tar.bz2 ext3"``. `Ext3` can than used by ``runqemu`` command.
+  ``"tar.bz2 ext3"``. `Ext3` can than used by :program:`runqemu`
+  command.
 * EXTRA_IMAGEDEPENDS_: Located on `qemu.inc`_. Defines the extra
   dependent tasks to host's native Qemu tools. Default is:
   ``"qemu-native qemu-helper-native"``
 * KERNEL_IMAGETYPE_: Define the Linux kernel image binary format.
-  `zImage` can than used by ``runqemu`` command.
+  `zImage` can than used by :program:`runqemu` command.
 * SERIAL_CONSOLE_: Define the serial console (`baud rate` and
   `device name`) for getty.
 * `PREFERRED_PROVIDER_virtual/kernel`_. Default located on

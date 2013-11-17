@@ -1,27 +1,38 @@
 Yocto Folders
 =============
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
 
-* **tqs-community-bsp**: Base (BASE) directory where all Yocto data
-  resides (recipes, source code, built packages, images, etc)
+   .. sectionauthor:: |slz_obfuscated|
 
-* **BASE/sources**: Source (SOURCE) directory where metadata (layers)
-  resides
+.. only:: latex or man or texinfo or text
 
-* `BASE/build`_: Build (BUILD) directory where ``bitbake`` commands
-  are executed
+   .. sectionauthor:: |slz_plain_text|
 
-* `BASE/build/tmp`_: Target (TMP) directory for all bitbake commands
+:**tqs-community-bsp**:			Base (BASE) directory where all
+					Yocto data resides (recipes,
+					source code, built packages,
+					images, etc).
 
-* `BASE/build/tmp/work`_: Working (WORKING) directory for recipes
-  tasks
+:**BASE/sources**:			Source (SOURCE) directory where
+					metadata (layers) resides.
 
-* `BASE/build/tmp/deploy`_: Deploy (DEPLOY) directory where bitbake's
-  output data is found
+:`BASE/build`_:				Build (BUILD) directory where
+					:program:`bitbake` commands are
+					executed.
 
-* `BASE/build/tmp/deploy/images`_: Complete and partial images are
-  found under this folder
+:`BASE/build/tmp`_:			Target (TMP) directory for all
+					bitbake commands.
+
+:`BASE/build/tmp/work`_:		Working (WORKING) directory for
+					recipes tasks.
+
+:`BASE/build/tmp/deploy`_:		Deploy (DEPLOY) directory where
+					bitbake's output data is found.
+:`BASE/build/tmp/deploy/images`_:	Complete and partial images are
+					found under this folder.
+:**BASE/build/tmp/deploy/sdk**:		Complete SDK installation binaries
+					are found under this folder.
 
 
 
