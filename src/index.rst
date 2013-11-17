@@ -28,20 +28,15 @@
 
    .. include:: doclegal.inc
 
+.. topic:: Things Todo
+
+   .. todolist::
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   bsp-scope
-   kernel-linux
-   u-boot
-   userspace-pkg
-   known-issues
-
-
-.. Things todo
-.. ===========
-
-.. .. todolist::
+   release-notes/index.rst
+   yocto-tutorial/index.rst
 
 .. only:: man or texinfo or text
 

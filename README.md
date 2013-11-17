@@ -35,7 +35,7 @@ Sphinx build packages:
     pip install sphinxcontrib-tikz
     pip install sphinxcontrib-blockdiag
 
-    cd <doc_path>
+    cd src
     make ...
 
     deactivate

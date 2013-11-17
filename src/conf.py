@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# TQ Systems Community BSP Release Notes documentation build configuration file, created by
+# TQ Systems Community BSP documentation build configuration file, created by
 # sphinx-quickstart on Mon Oct 28 15:32:22 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -43,7 +43,7 @@ tikz_tikzlibraries = 'arrows'
 # blockdiag_fontpath = os.path.abspath('../../ressources/themes/sphinxdoc-ext/static/dejavusans_book_macroman/DejaVuSans-webfont.ttf')
 
 # Fontmap for blockdiag (maps fontfamily name to truetype font), The default is None.
-blockdiag_fontmap = os.path.abspath('../diag.fontmap')
+blockdiag_fontmap = os.path.abspath('./diag.fontmap')
 
 # If this is True, blockdiag generates images with anti-alias filter. The default is False.
 blockdiag_antialias = True
@@ -58,7 +58,7 @@ blockdiag_tex_image_format = 'PDF'
 todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['../../ressources/templates']
+templates_path = ['../ressources/templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -70,10 +70,14 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'TQ Systems Community BSP Release Notes'
+project = u'TQ Systems Community BSP'
 author = u'TQ Systems Community BSP Team'
 publisher = u'Li-Pro.Net'
 copyright = u'2013, ' + publisher
+
+# General information about the sub-project.
+rn_project = u'TQ Systems Community BSP Release Notes'
+yt_project = u'TQ Systems Yocto Project Tutorial'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -88,10 +92,13 @@ release = '1.x-current'
 # source file that is read.
 rst_prolog = '''
 .. include:: /%s/docmeta.inc
+.. |LICENSE| replace:: :download:`LICENSE </%s/LICENSE>`
 .. |project| replace:: %s
 .. |author| replace:: %s
 .. |publisher| replace:: %s
-''' % (os.path.abspath('.'),project,author,publisher)
+.. |rn_project| replace:: %s
+.. |yt_project| replace:: %s
+''' % (os.path.abspath('.'),os.path.abspath('..'),project,author,publisher,rn_project,yt_project)
 
 # A string of reStructuredText that will be included at the end of every source
 # file that is read. This is the right place to add substitutions that should be
@@ -154,7 +161,7 @@ html_theme_options = {
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['../../ressources/themes']
+html_theme_path = ['../ressources/themes']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -222,7 +229,7 @@ html_show_sphinx = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'TQSystemsCommunityBSPReleaseNotesdoc'
+htmlhelp_basename = 'TQSystemsCommunityBSPdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -253,7 +260,9 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'TQSystemsCommunityBSPReleaseNotes.tex', project, author, 'manual'),
+  ('index', 'TQSystemsCommunityBSP.tex', project, author, 'manual'),
+  ('release-notes/index', 'TQSystemsCommunityBSPReleaseNotes.tex', rn_project, author, 'manual'),
+  ('yocto-tutorial/index', 'TQSystemsYoctoProjectTutorial.tex', yt_project, author, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -282,7 +291,9 @@ latex_logo = "_images/lpn-logo.pdf"
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'tqsystemscommunitybspreleasenotes', project, [author], 7)
+    ('index', 'tqsystemscommunitybsp', project, [author], 7),
+    ('release-notes/index', 'tqsystemscommunitybspreleasenotes', rn_project, [author], 7),
+    ('yocto-tutorial/index', 'tqsystemsyoctoprojecttutorial', yt_project, [author], 7),
 ]
 
 # If true, show URL addresses after external links.
@@ -295,8 +306,14 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'TQSystemsCommunityBSPReleaseNotes', project,
+  ('index', 'TQSystemsCommunityBSP', project,
+   author, 'TQSystemsCommunityBSP', 'One line description of project.',
+   'Miscellaneous'),
+  ('release-notes/index', 'TQSystemsCommunityBSPReleaseNotes', rn_project,
    author, 'TQSystemsCommunityBSPReleaseNotes', 'One line description of project.',
+   'Miscellaneous'),
+  ('yocto-tutorial/index', 'TQSystemsYoctoProjectTutorial', yt_project,
+   author, 'TQSystemsYoctoProjectTutorial', 'One line description of project.',
    'Miscellaneous'),
 ]
 

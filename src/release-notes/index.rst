@@ -1,11 +1,11 @@
-.. TQ Systems Yocto Project Tutorial documentation master file, created by
-   sphinx-quickstart on Tue Oct 29 10:14:18 2013.
+.. TQ Systems Community BSP Release Notes documentation master file, created by
+   sphinx-quickstart on Mon Oct 28 15:32:22 2013.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 
-|project|
-=========
+|rn_project|
+============
 
 .. only:: html
 
@@ -21,31 +21,26 @@
 .. topic:: Involved Components
 
    * TQ Systems embedded modules
+   * Poky embedded Linux
    * Yocto related
-   * General tutorial
 
 .. only:: latex
 
    .. include:: doclegal.inc
 
+.. .. topic:: Things Todo
+.. 
+..    .. todolist::
+
 .. toctree::
    :numbered:
    :maxdepth: 2
 
-   build-and-boot
-   folders
-   arch
-   meta_input
-   layer
-   patching_kernel
-   building_kernel
-   contribute
-
-
-Things todo
-===========
-
-.. todolist::
+   bsp-scope
+   kernel-linux
+   u-boot
+   userspace-pkg
+   known-issues
 
 .. only:: man or texinfo or text
 

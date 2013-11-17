@@ -6,12 +6,12 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
-BUILDNAME     = TQSystemsYoctoProjectTutorial
+BUILDNAME     = TQSystemsCommunityBSP
 
 # Internal variables.
-SOURCEDIR       = source
+SOURCEDIR       = .
 # the IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
-IMAGEDIRS       = _images
+IMAGEDIRS       = _images release-notes/_images yocto-tutorial/_images
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) $(SOURCEDIR)
@@ -119,8 +119,8 @@ epub: images-png
 xelatex: images-pdf
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/xelatex
 	sed -i -e 's/pdflatex/xelatex/g' $(BUILDDIR)/xelatex/Makefile
-	-for pdf in $(BUILDDIR)/xelatex/blockdiag-*.pdf; do pdftops $$pdf; done
-	-for ps  in $(BUILDDIR)/xelatex/blockdiag-*.ps;  do epstopdf $$ps;  done
+	for pdf in $(BUILDDIR)/xelatex/blockdiag-*.pdf; do pdftops $$pdf; done
+	for ps  in $(BUILDDIR)/xelatex/blockdiag-*.ps;  do epstopdf $$ps;  done
 	@echo
 	@echo "Build finished; the XeTeX files are in $(BUILDDIR)/xelatex."
 	@echo "Run \`xelatex *.tex' in that directory to generate PDF" \
@@ -129,8 +129,8 @@ xelatex: images-pdf
 xelatexpdf: images-pdf
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/xelatex
 	sed -i -e 's/pdflatex/xelatex/g' $(BUILDDIR)/xelatex/Makefile
-	-for pdf in $(BUILDDIR)/xelatex/blockdiag-*.pdf; do pdftops $$pdf; done
-	-for ps  in $(BUILDDIR)/xelatex/blockdiag-*.ps;  do epstopdf $$ps;  done
+	for pdf in $(BUILDDIR)/xelatex/blockdiag-*.pdf; do pdftops $$pdf; done
+	for ps  in $(BUILDDIR)/xelatex/blockdiag-*.ps;  do epstopdf $$ps;  done
 	@echo "Running XeTeX files through xelatex..."
 	$(MAKE) -C $(BUILDDIR)/xelatex all-pdf
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/xelatex."
