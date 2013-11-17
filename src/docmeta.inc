@@ -33,7 +33,7 @@
 .. |dm_copyright| replace:: Copyright |copy| 2013, |LPN| |---|
    all rights reserved. This work is licensed under a Creative Commons
    Attribution-ShareAlike 3.0 Unported License (`CC-BY-SA-3.0`_).
-   See the file |LICENSE| that comes with
+   See the file |LICENSE| and |CREDITS| that comes with
    the documentation.
 
 .. |copy| unicode:: 0xA9 .. copyright sign

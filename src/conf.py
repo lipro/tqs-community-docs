@@ -92,13 +92,23 @@ release = '1.x-current'
 # source file that is read.
 rst_prolog = '''
 .. include:: /%s/docmeta.inc
+.. |CREDITS| replace:: :download:`CREDITS </%s/CREDITS>`
 .. |LICENSE| replace:: :download:`LICENSE </%s/LICENSE>`
 .. |project| replace:: %s
 .. |author| replace:: %s
 .. |publisher| replace:: %s
 .. |rn_project| replace:: %s
 .. |yt_project| replace:: %s
-''' % (os.path.abspath('.'),os.path.abspath('..'),project,author,publisher,rn_project,yt_project)
+''' % (
+    os.path.abspath('.'),
+    os.path.abspath('..'),
+    os.path.abspath('..'),
+    project,
+    author,
+    publisher,
+    rn_project,
+    yt_project
+)
 
 # A string of reStructuredText that will be included at the end of every source
 # file that is read. This is the right place to add substitutions that should be
