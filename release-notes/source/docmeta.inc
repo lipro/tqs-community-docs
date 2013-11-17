@@ -27,7 +27,7 @@
 
 .. Organization:
 
-.. |dm_organization| replace:: |LPN|
+.. |dm_organization| replace:: |publisher|
 .. |dm_address| replace:: Jena, Germany
 .. |dm_contact_obfuscated| replace:: |slz_obfuscated|
 .. |dm_contact_plain_text| replace:: |slz_plain_text|

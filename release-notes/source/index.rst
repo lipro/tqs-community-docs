@@ -4,8 +4,8 @@
    contain the root `toctree` directive.
 
 
-TQ Systems Community BSP Release Notes
-======================================
+|project|
+=========
 
 .. only:: html
 
