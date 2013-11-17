@@ -82,7 +82,7 @@ copyright = u'2013, ' + publisher
 # The short X.Y version.
 version = '1.x'
 # The full version, including alpha/beta/rc tags.
-release = 'current'
+release = '1.x-current'
 
 # A string of reStructuredText that will be included at the beginning of every
 # source file that is read.
@@ -158,7 +158,7 @@ html_theme_path = ['../../ressources/themes']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = project + ' ' + version + ' (' + release + ')'
+html_title = project + ' ' + release
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
