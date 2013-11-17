@@ -72,8 +72,8 @@ master_doc = 'index'
 # General information about the project.
 project = u'TQ Systems Yocto Project Tutorial'
 author = u'TQ Systems Community BSP Team'
-publisher = author
-copyright = u'2013, ' + author
+publisher = u'Li-Pro.Net'
+copyright = u'2013, ' + publisher
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -86,7 +86,12 @@ release = 'current'
 
 # A string of reStructuredText that will be included at the beginning of every
 # source file that is read.
-rst_prolog = "\n.. include:: /%s/docmeta.inc\n\n"%(os.path.abspath('.'),)
+rst_prolog = '''
+.. include:: /%s/docmeta.inc
+.. |project| replace:: %s
+.. |author| replace:: %s
+.. |publisher| replace:: %s
+''' % (os.path.abspath('.'),project,author,publisher)
 
 # A string of reStructuredText that will be included at the end of every source
 # file that is read. This is the right place to add substitutions that should be

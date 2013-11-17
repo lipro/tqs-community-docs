@@ -10,7 +10,7 @@
       :Organization:	|dm_organization|
       :Address:		|dm_address|
       :Copyright:	|dm_copyright|
-      :Authors:		TQ Systems Community BSP Team:
+      :Authors:		|author|
 
 			* |slz_obfuscated|
 
@@ -29,7 +29,7 @@
       :Organization:	|dm_organization|
       :Address:		|dm_address|
       :Copyright:	|dm_copyright|
-      :Authors:		TQ Systems Community BSP Team:
+      :Authors:		|author|
 
 			* |slz_plain_text|
 

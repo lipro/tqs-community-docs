@@ -4,8 +4,8 @@
    contain the root `toctree` directive.
 
 
-TQ Systems Yocto Project Tutorial
-=================================
+|project|
+=========
 
 .. only:: html
 
