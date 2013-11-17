@@ -1,7 +1,14 @@
 Linux Kernel
 ============
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
+
 .. |linux_tqs_version| replace:: 2.6.34.14
 
 Tqs-community-bsp supports the following sources for Linux Kernel:

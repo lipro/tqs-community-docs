@@ -1,7 +1,14 @@
 U-Boot
 ============
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
+
+   .. sectionauthor:: |slz_obfuscated|
+
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
+
 .. |u_boot_tqs_version| replace:: 2010.06
 .. |u_boot_tqs_tag| replace:: v2010.06-tqma35-0105
 

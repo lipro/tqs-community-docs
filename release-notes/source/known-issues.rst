@@ -1,8 +1,13 @@
 Known Issues
 ============
 
-.. sectionauthor:: Stephan Linz <rexut95@gmail.com>
+.. only:: html
 
-**QEMUARMv6** not supported by `runqemu`
+   .. sectionauthor:: |slz_obfuscated|
 
-**MX35** Work in progress; TODO: evaluate udev-172
+.. only:: latex or man or texinfo or text
+
+   .. sectionauthor:: |slz_plain_text|
+
+:qemuarmv6:	* Qemu ARMv6 is not supported by :program:`runqemu`
+:tqma35:	* Work in progress.
