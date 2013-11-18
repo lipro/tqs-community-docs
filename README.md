@@ -31,6 +31,8 @@ Sphinx build packages:
     source pyvenv/bin/activate
     pip install reportlab
     pip install sphinx
+    pip install sphinxcontrib-ansi
+    pip install sphinxcontrib-programoutput
     pip install sphinxcontrib-email
     pip install sphinxcontrib-tikz
     pip install sphinxcontrib-blockdiag

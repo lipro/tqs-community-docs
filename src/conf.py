@@ -25,7 +25,17 @@ needs_sphinx = '1.1'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.todo', 'sphinxcontrib.email', 'sphinxcontrib.blockdiag', 'sphinxcontrib.tikz']
+extensions = [
+    'sphinx.ext.todo',
+    'sphinxcontrib.ansi',
+    'sphinxcontrib.programoutput',
+    'sphinxcontrib.email',
+    'sphinxcontrib.blockdiag',
+    'sphinxcontrib.tikz'
+]
+
+def setup(app):
+    app.add_stylesheet('ansi-color.css')
 
 # Choose the image processing, either 'Netpbm' or 'ImageMagick'. The default is 'Netpbm'.
 tikz_proc_suite = 'ImageMagick'
@@ -56,6 +66,12 @@ blockdiag_tex_image_format = 'PDF'
 
 # If this is True, todo and todolist produce output, else they produce nothing. The default is False.
 todo_include_todos = True
+
+# If this is True, ANSI colour sequences in program output are interpreted. The default is False.
+programoutput_use_ansi = True
+
+# If you do not like the builtin stylesheets, set this to None and create your own stylesheet.
+html_ansi_stylesheet = None
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['../ressources/templates']
@@ -107,7 +123,7 @@ rst_prolog = '''
     author,
     publisher,
     rn_project,
-    yt_project
+    yt_project,
 )
 
 # A string of reStructuredText that will be included at the end of every source
@@ -192,7 +208,7 @@ html_logo = "_images/lpn-logo.png"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['../../ressources/static']
+html_static_path = ['../ressources/static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
