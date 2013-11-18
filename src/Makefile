@@ -1,8 +1,21 @@
 # Makefile for Sphinx documentation
 #
 
+VERSION = 1
+PATCHLEVEL = x
+SUBLEVEL =
+EXTRAVERSION =
+
+ifneq "$(SUBLEVEL)" ""
+DOC_VERSION = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)$(EXTRAVERSION)
+else
+DOC_VERSION = $(VERSION).$(PATCHLEVEL)$(EXTRAVERSION)
+endif
+
+DOC_RELEASE = $(DOC_VERSION)$(shell ../scripts/setlocalversion ..)
+
 # You can set these variables from the command line.
-SPHINXOPTS    =
+SPHINXOPTS    = -D version=$(DOC_VERSION) -D release=$(DOC_RELEASE)
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
