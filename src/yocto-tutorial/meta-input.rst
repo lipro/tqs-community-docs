@@ -94,22 +94,22 @@ Build's layer configuration file ``build/conf/bblayers.conf``
 
 * Only modified when adding a new layer:
 
-::
+  ::
 
-    LCONF_VERSION = "6"
+      LCONF_VERSION = "6"
 
-    BBPATH = "${TOPDIR}"
-    BSPDIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../..')}"
+      BBPATH = "${TOPDIR}"
+      BSPDIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../..')}"
 
-    BBFILES ?= ""
-    BBLAYERS = " \
-      ${BSPDIR}/sources/poky/meta \
-      ${BSPDIR}/sources/poky/meta-yocto \
-      \
-      ${BSPDIR}/sources/meta-fsl-arm \
-      \
-      ${BSPDIR}/sources/meta-tqs-arm \
-    "
+      BBFILES ?= ""
+      BBLAYERS = " \
+        ${BSPDIR}/sources/poky/meta \
+        ${BSPDIR}/sources/poky/meta-yocto \
+        \
+        ${BSPDIR}/sources/meta-fsl-arm \
+        \
+        ${BSPDIR}/sources/meta-tqs-arm \
+      "
 
 Layer configuration file ``source/meta-tqs-arm/conf/layer.conf``
 ````````````````````````````````````````````````````````````````

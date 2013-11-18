@@ -17,33 +17,33 @@ these steps to contribute:
 
 * Make sure you have previously configured your personal info:
 
-::
+  ::
 
-    $ git config --global user.name "Your Name Here"
-    $ git config --global user.email "your_email@example.com"
+      $ git config --global user.name "Your Name Here"
+      $ git config --global user.email "your_email@example.com"
 
 .. * Subscribed to the Freescale Yocto Project `Mailing
 ..   List <https://lists.yoctoproject.org/listinfo/meta-tqsystems>`_
 
 * Download ``master`` branches:
 
-::
+  ::
 
-    tqs-community-bsp $  repo init \
+      tqs-community-bsp $  repo init \
         -u git://github.com/lipro/tqs-community-bsp-platform \
         -b master
 
 * Update:
 
-::
+  ::
 
-    tqs-community-bsp $ repo sync
+      tqs-community-bsp $ repo sync
 
 * Create local branches so your work is *not* done on master:
 
-::
+  ::
 
-    tqs-community-bsp $ repo start <branch name> --all
+      tqs-community-bsp $ repo start <branch name> --all
 
 Where ``<branch name>`` is any name you want to give to your local
 branch (e.g. ``fix_uboot_recipe``, ``new_gstreamer_recipe``, etc.).
@@ -57,10 +57,10 @@ branch (e.g. ``fix_uboot_recipe``, ``new_gstreamer_recipe``, etc.).
 * Commit your changes using ``git``. In this example we assume your
   change is on ``meta-tqs-arm`` folder:
 
-::
+  ::
 
-    sources/meta-tqs-arm $ git add <file 1> <file 2>
-    sources/meta-tqs-arm $ git commit
+      sources/meta-tqs-arm $ git add <file 1> <file 2>
+      sources/meta-tqs-arm $ git commit
 
 On the commit's log, the title must start with the filename change
 or introduced, then a brief description of the patch's goal,
@@ -70,9 +70,9 @@ commits).
 
 * Create a patch:
 
-::
+  ::
 
-    sources/meta-tqs-arm $ git format-patch -s \
+      sources/meta-tqs-arm $ git format-patch -s \
         --subject-prefix='meta-tqs-arm][PATCH' -1
 
 Where the last parameter (``-1``) indicate to patch last commit. In
@@ -82,14 +82,14 @@ you change the ``--subject-prefix`` value.
 
 * Send your patch or patches with:
 
-.. ::
+..   ::
 .. 
-..     sources/meta-tqs-arm $ git send-email \
+..       sources/meta-tqs-arm $ git send-email \
 ..         --to meta-tqsystems@yoctoproject.org <patch>
 
-::
+  ::
 
-    sources/meta-tqs-arm $ git send-email \
+      sources/meta-tqs-arm $ git send-email \
         --to linz@li-pro.net <patch>
 
 Where ``<patch>`` is the file created by :program:`git format-patch`.
@@ -101,6 +101,6 @@ Where ``<patch>`` is the file created by :program:`git format-patch`.
 * Once your patch has been approved, you can delete your working
   branches:
 
-::
+  ::
 
-    tqs-community-bsp $ repo abandon <branch name>
+      tqs-community-bsp $ repo abandon <branch name>

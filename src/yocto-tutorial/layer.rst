@@ -21,21 +21,21 @@ proceeding check
 * To have access to Yocto scripts, setup the enviroment from the BASE
   folder:
 
-::
+  ::
 
-    tqs-community-bsp $ . setup-environment build
+      tqs-community-bsp $ . setup-environment build
 
 * Move to the place you want to create your layer and choose a name
   (e.g. ``meta-tqs-custom``):
 
-::
+  ::
 
-    sources $ yocto-layer create meta-tqs-custom
-    # Answer the questions. Make sure the priority is set correctly
-    # (higher numbers, higher priorities). Set the priority equal to
-    # the lowest already present, except when you have introduce a
-    # new recipe with the same name as other and want to shadow the
-    # original one.
+      sources $ yocto-layer create meta-tqs-custom
+      # Answer the questions. Make sure the priority is set correctly
+      # (higher numbers, higher priorities). Set the priority equal to
+      # the lowest already present, except when you have introduce a
+      # new recipe with the same name as other and want to shadow the
+      # original one.
 
 * Add any metadata content. Suggestion: Version the layer with Git and
   upload your local git repo to a server.
@@ -53,6 +53,6 @@ proceeding check
 * To verify that your layer is *seen* by BitBake, run the following
   command under the BUILD folder:
 
-::
+  ::
 
-    build $ bitbake-layers show-layers
+      build $ bitbake-layers show-layers
