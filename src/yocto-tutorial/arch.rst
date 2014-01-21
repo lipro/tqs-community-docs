@@ -34,7 +34,7 @@ Name      Date       Yocto    Poky  BB    Links
                                           `Status <http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.6_Status>`__,
                                           `Test Plan <http://wiki.yoctoproject.org/wiki/Yocto_1.6_Overall_Test_Plan>`__,
                                           `Test Report <http://wiki.yoctoproject.org/wiki/Yocto_1.6_Milestone_Test_Report>`__
-Dora [#]_ 2013-10-18 1.5      10.0  1.20  `Features <http://wiki.yoctoproject.org/wiki/Yocto_1.5_Features>`__,
+Dora      2013-10-18 1.5      10.0  1.20  `Features <http://wiki.yoctoproject.org/wiki/Yocto_1.5_Features>`__,
                                           `Schedule <http://wiki.yoctoproject.org/wiki/Yocto_1.5_Schedule>`__,
                                           `Status <http://wiki.yoctoproject.org/wiki/Yocto_Project_v1.5_Status>`__,
                                           `Test Plan <http://wiki.yoctoproject.org/wiki/Yocto_1.5_Overall_Test_Plan>`__,
@@ -76,4 +76,3 @@ Inky                          1.0
 .. rubric:: Footnotes
 
 .. [#] in planning
-.. [#] in development
