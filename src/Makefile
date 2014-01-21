@@ -46,7 +46,10 @@ SVG2PNG       = rsvg-convert
 SVG2PNG_FLAGS = --format=png --dpi-x=90 --dpi-y=90 --keep-aspect-ratio
 #SVG2PNG_FLAGS += --background-color=\#00
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf xelatex xelatexpdf text man changes linkcheck doctest gettext
+# Fix #1352 (http://bitbucket.org/birkenfeld/sphinx/issue/1352/)
+HTML_LOGO = $(shell awk '/html_logo/{print $$3}' conf.py | head -1 | xargs basename)
+
+.PHONY: help fixes clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf xelatex xelatexpdf text man changes linkcheck doctest gettext
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -72,41 +75,48 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
+fixes:
+	@echo "Fix known issues introduced with different new Sphinx versions:"
+	@echo "  #1352      http://bitbucket.org/birkenfeld/sphinx/issue/1352/"
+	@echo "             touch $(HTML_LOGO)"
+	@touch -f $(HTML_LOGO)
+
 clean: clean-images
 	-rm -rf $(BUILDDIR)/*
+	-rm -f $(HTML_LOGO)
 
-html: images-png
+html: images-png fixes
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-dirhtml: images-png
+dirhtml: images-png fixes
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
-singlehtml: images-png
+singlehtml: images-png fixes
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-pickle: images-png
+pickle: images-png fixes
 	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
-json: images-png
+json: images-png fixes
 	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
-htmlhelp: images-png
+htmlhelp: images-png fixes
 	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
 	      ".hhp project file in $(BUILDDIR)/htmlhelp."
 
-qthelp: images-png
+qthelp: images-png fixes
 	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
@@ -115,7 +125,7 @@ qthelp: images-png
 	@echo "To view the help file:"
 	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/$(BUILDNAME).qhc"
 
-devhelp: images-png
+devhelp: images-png fixes
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
@@ -124,12 +134,12 @@ devhelp: images-png
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/$(BUILDNAME)"
 	@echo "# devhelp"
 
-epub: images-png
+epub: images-png fixes
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
-xelatex: images-pdf
+xelatex: images-pdf fixes
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/xelatex
 	sed -i -e 's/pdflatex/xelatex/g' $(BUILDDIR)/xelatex/Makefile
 	for pdf in $(BUILDDIR)/xelatex/blockdiag-*.pdf; do pdftops $$pdf; done
@@ -139,7 +149,7 @@ xelatex: images-pdf
 	@echo "Run \`xelatex *.tex' in that directory to generate PDF" \
 	      "(use \`make xelatexpdf' here to do that automatically)."
 
-xelatexpdf: images-pdf
+xelatexpdf: images-pdf fixes
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/xelatex
 	sed -i -e 's/pdflatex/xelatex/g' $(BUILDDIR)/xelatex/Makefile
 	for pdf in $(BUILDDIR)/xelatex/blockdiag-*.pdf; do pdftops $$pdf; done
@@ -148,7 +158,7 @@ xelatexpdf: images-pdf
 	$(MAKE) -C $(BUILDDIR)/xelatex all-pdf
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/xelatex."
 
-latex: # images-pdf
+latex: # images-pdf fixes
 	@echo "TEMPORARY OFF: use \`make xelatex' instead."
 	@#$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@#echo
@@ -156,53 +166,53 @@ latex: # images-pdf
 	@#echo "Run \`make' in that directory to run these through (pdf)latex" \
 	 #     "(use \`make latexpdf' here to do that automatically)."
 
-latexpdf: # images-pdf
+latexpdf: # images-pdf fixes
 	@echo "TEMPORARY OFF: use \`make xelatexpdf' instead."
 	@#$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@#echo "Running LaTeX files through pdflatex..."
 	@#$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@#echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
-text:
+text: fixes
 	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
 	@echo
 	@echo "Build finished. The text files are in $(BUILDDIR)/text."
 
-man:
+man: fixes
 	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
 	@echo
 	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
 
-texinfo:
+texinfo: fixes
 	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
 	@echo
 	@echo "Build finished. The Texinfo files are in $(BUILDDIR)/texinfo."
 	@echo "Run \`make' in that directory to run these through makeinfo" \
 	      "(use \`make info' here to do that automatically)."
 
-info:
+info: fixes
 	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
 	@echo "Running Texinfo files through makeinfo..."
 	make -C $(BUILDDIR)/texinfo info
 	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
 
-gettext:
+gettext: fixes
 	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
 	@echo
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
-changes:
+changes: fixes
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
-linkcheck:
+linkcheck: fixes
 	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
-doctest:
+doctest: fixes
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
