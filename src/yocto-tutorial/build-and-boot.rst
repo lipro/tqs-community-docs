@@ -42,7 +42,7 @@ Build and Boot your TQ Systems Yocto Image
 
   ::
 
-      # To list all FSL related machines, type
+      # To list all TQS related machines, type
       tqs-community-bsp $ find sources/meta-tqs* -name "*.conf" | grep "conf/machine"
       tqs-community-bsp $ MACHINE=<selected machine> . ./setup-environment build
       # if MACHINE is not set, the default machine is 'qemuarmv6'
