@@ -260,6 +260,17 @@ htmlhelp_basename = 'TQSystemsCommunityBSPdoc'
 
 # -- Options for LaTeX output --------------------------------------------------
 
+latex_custom = r'''
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans Condensed}
+\setsansfont{DejaVu Sans Condensed}
+\setmonofont{DejaVu Sans Mono}
+\setromanfont{DejaVu Sans Condensed}
+'''
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     'papersize': 'a4paper',
@@ -270,17 +281,7 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     'inputenc': '',
     'utf8extra': '',
-    'preamble': '''
-
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usetikzlibrary{arrows}
-\usepackage{fontspec}
-\setmainfont{DejaVu Sans Condensed}
-\setsansfont{DejaVu Sans Condensed}
-\setmonofont{DejaVu Sans Mono}
-\setromanfont{DejaVu Sans Condensed}
-''',
+    'preamble': latex_custom,
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
