@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,15 +7,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1. Build and Boot your TQ Systems Yocto Image &mdash; TQ Systems Community BSP 1.x-current</title>
+    <title>1. Build and Boot your TQ Systems Yocto Image &mdash; TQ Systems Community BSP 1.x-g476b0ea documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/ansi-color.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.x-current',
+        VERSION:     '1.x-g476b0ea',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="top" title="TQ Systems Community BSP 1.x-g476b0ea documentation" href="../index.html" />
     <link rel="up" title="TQ Systems Yocto Project Tutorial" href="index.html" />
     <link rel="next" title="2. Yocto Folders" href="folders.html" />
     <link rel="prev" title="TQ Systems Yocto Project Tutorial" href="index.html" /> 
@@ -42,7 +42,7 @@
              accesskey="P">previous</a> |</li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" accesskey="U">TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
       </ul>
@@ -70,78 +70,80 @@
             
   <div class="section" id="build-and-boot-your-tq-systems-yocto-image">
 <span id="build-and-boot"></span><h1>1. Build and Boot your TQ Systems Yocto Image<a class="headerlink" href="#build-and-boot-your-tq-systems-yocto-image" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Check
+<ul>
+<li><p class="first">Check
 <a class="reference external" href="http://www.yoctoproject.org/docs/1.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system">required</a>
-packages for your Linux Distribution and install them.</li>
-<li>Install the
+packages for your Linux Distribution and install them.</p>
+</li>
+<li><p class="first">Install the
 <a class="reference external" href="http://source.android.com/source/developing.html">repo</a> utility
-following these steps:</li>
-</ul>
-<div class="highlight-python"><pre>$ mkdir ~/bin
-$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
+following these steps:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir ~/bin
+$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; \
+  ~/bin/repo
 $ chmod a+x ~/bin/repo
-$ PATH=${PATH}:~/bin</pre>
+$ PATH=${PATH}:~/bin
+</pre></div>
 </div>
-<ul class="simple">
-<li>Download the BSP metadata (recipes + configuration files + classes):</li>
-</ul>
-<div class="highlight-python"><pre>$ mkdir tqs-community-bsp
+</li>
+<li><p class="first">Download the BSP metadata (recipes + configuration files + classes):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir tqs-community-bsp
 $ cd tqs-community-bsp
 tqs-community-bsp $ repo init \
-                         -u https://github.com/lipro/tqs-community-bsp-platform \
-                         -b dylan
-tqs-community-bsp $ repo sync # Takes some minutes the first time</pre>
+                    -u https://github.com/lipro/tqs-community-bsp-platform \
+                    -b dylan
+tqs-community-bsp $ repo sync # Takes some minutes the first time
+</pre></div>
 </div>
-<ul class="simple">
-<li>Select your machine and prepare the bitbake&#8217;s environment:</li>
-</ul>
-<div class="highlight-python"><pre># To list all FSL related machines, type
-tqs-community-bsp $ find sources/meta-tqs* -name "*.conf" | grep "conf/machine"
+</li>
+<li><p class="first">Select your machine and prepare the bitbake&#8217;s environment:</p>
+<div class="highlight-python"><div class="highlight"><pre># To list all TQS related machines, type
+tqs-community-bsp $ find sources/meta-tqs* -name &quot;*.conf&quot; | grep &quot;conf/machine&quot;
 tqs-community-bsp $ MACHINE=&lt;selected machine&gt; . ./setup-environment build
-# if MACHINE is not set, the default machine is 'qemuarmv6'
-build $</pre>
+# if MACHINE is not set, the default machine is &#39;qemuarmv6&#39;
+build $
+</pre></div>
 </div>
-<ul class="simple">
-<li>Choose an image and bake it!</li>
-</ul>
-<div class="highlight-python"><pre>build $ bitbake-layers show-recipes | grep image    # To list all possible images
+</li>
+<li><p class="first">Choose an image and bake it!</p>
+<div class="highlight-python"><div class="highlight"><pre>build $ bitbake-layers show-recipes | grep image    # To list all possible images
 build $ bitbake &lt;selected image&gt;                    # Bake! The first time can
                                                     # take several hours.
-# e.g. bitbake core-image-minimal</pre>
+# e.g. bitbake core-image-minimal
+</pre></div>
 </div>
-<ul class="simple">
-<li>Boot (e.g. <em class="xref std std-option">core-image-minimal</em>) on the machine
-<em class="xref std std-option">qemuarmv6</em> with Yocto&#8217;s <strong class="program">runqemu</strong>:</li>
-</ul>
-<div class="highlight-python"><pre>build $ MACHINE=qemuarmv6 runqemu \
-                          tmp/deploy/images/zImage-qemuarmv6.bin \
-                          tmp/deploy/images/core-image-minimal-qemuarmv6.ext3</pre>
+</li>
+<li><p class="first">Boot (e.g. <em class="xref std std-option">core-image-minimal</em>) on the machine
+<em class="xref std std-option">qemuarmv6</em> with Yocto&#8217;s <strong class="program">runqemu</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre>build $ MACHINE=qemuarmv6 runqemu \
+        tmp/deploy/images/zImage-qemuarmv6.bin \
+        tmp/deploy/images/core-image-minimal-qemuarmv6.ext3
+</pre></div>
 </div>
-<ul>
+</li>
 <li><p class="first">Flash SD Card for machines other than <em class="xref std std-option">qemuarmv6</em>:</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
 <p class="last">The issue <cite>Flash SD Card</cite> needs to be evaluated!
 Do not yet apply this description!</p>
 </div>
-</li>
-</ul>
-<div class="highlight-python"><pre># Insert your SD Card
-# Type '$ dmesg | tail' to see the device node being used, e.g /dev/sdb)
+<div class="highlight-python"><div class="highlight"><pre># Insert your SD Card
+# Type &#39;$ dmesg | tail&#39; to see the device node being used, e.g /dev/sdb)
 # In case SD to be flash has already some partitions, the host system may have
-# mounted these, so unmount them, e.g. '$ sudo umount /dev/sdb?'.
-build $ ls -la 'tmp/deploy/images/*.sdcard'
+# mounted these, so unmount them, e.g. &#39;$ sudo umount /dev/sdb?&#39;.
+build $ ls -la &#39;tmp/deploy/images/*.sdcard&#39;
 
 # Flash the soft link one
 build $ sudo dd \
-            if=tmp/deploy/images/&lt;selected image&gt;-&lt;select machine&gt;.sdcard \
-            of=/dev/sdX \
-            bs=1M
-build $ sync</pre>
+        if=tmp/deploy/images/&lt;selected image&gt;-&lt;select machine&gt;.sdcard \
+        of=/dev/sdX \
+        bs=1M
+build $ sync
+</pre></div>
 </div>
-<ul class="simple">
-<li>Place your SD Card in the correct board&#8217;s slot and boot!</li>
+</li>
+<li><p class="first">Place your SD Card in the correct board&#8217;s slot and boot!</p>
+</li>
 </ul>
 <p>Found Errors? Subscribe and report it to
 <script type="text/javascript">document.write(
@@ -170,7 +172,7 @@ with subject &#8220;[tqs-community-bsp] Error report: &lt;your_msg&gt;&#8221;.</
              >previous</a> |</li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" >TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
       </ul>

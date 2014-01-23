@@ -12,6 +12,7 @@
  */
 
 @import url("basic.css");
+@import url("ansi-color.css");
 @import url("dejavuserif_book_macroman/stylesheet.css");
 @import url("dejavuserif_bold_macroman/stylesheet.css");
 @import url("dejavuserif_italic_macroman/stylesheet.css");
@@ -324,8 +325,67 @@ div.warning p.admonition-title {
     background-color: #AFC1C4;
 }
 
+div.admonition ul, div.admonition ol,
+div.warning ul, div.warning ol {
+    margin: 0.1em 0.5em 0.5em 3em;
+    padding: 0;
+}
+
+/* -- admonition specifics -- */
+
+/* unhandled: attention, caution, danger, error, hint, important */
+
+div.topic {
+    background: #eeeeee;
+    border: 2px solid #C6C9CB;
+    padding: 10px 20px;
+    border-right-style: none;
+    border-left-style: none;
+}
+
+div.admonition-todo {
+    background: #f2d9b4 url(dialog-todo.png) no-repeat 10px 8px;
+    border: 2px solid #e9b96e;
+}
+
+div.admonition-todo p.admonition-title {
+    background-color: #d9a95e;
+    border-bottom-color: #e9b96e;
+}
+
+div.tip {
+    background: #e1feec url(dialog-topic.png) no-repeat 10px 8px;
+    border: 2px solid #009700;
+}
+
+div.tip p.admonition-title {
+    background-color: #00A200;
+    border-bottom-color: #009700;
+}
+
+div.seealso {
+    background: #fff6bf url(dialog-seealso.png) no-repeat 10px 8px;
+    border: 2px solid #ffd324;
+}
+
+div.seealso p.admonition-title {
+    background-color: #f7c322;
+    border-bottom-color: #ffd324;
+}
+
+div.note {
+    background: #e1ecfe url(dialog-note.png) no-repeat 10px 8px;
+    border: 2px solid #000097;
+}
+
+div.note p.admonition-title {
+    background-color: #0000D2;
+    border-bottom-color: #000097;
+}
+
 div.warning {
-    border: 1px solid #940000;
+    background: #fbe3e4 url(dialog-warning.png) no-repeat 10px 8px;
+    border: 2px solid #940000;
 }
 
 div.warning p.admonition-title {
@@ -333,10 +393,20 @@ div.warning p.admonition-title {
     border-bottom-color: #940000;
 }
 
-div.admonition ul, div.admonition ol,
-div.warning ul, div.warning ol {
-    margin: 0.1em 0.5em 0.5em 3em;
-    padding: 0;
+div.admonition-todo p, div.admonition-todo ul, div.admonition-todo ol,
+div.tip p, div.tip ul, div.tip ol,
+div.seealso p, div.seealso ul, div.seealso ol,
+div.note p, div.note ul, div.note ol,
+div.warning p, div.warning ul, div.warning ol {
+    padding: 10px 20px 10px 60px;
+}
+
+div.admonition-todo p.admonition-title,
+div.tip p.admonition-title,
+div.seealso p.admonition-title,
+div.note p.admonition-title,
+div.warning p.admonition-title {
+    display: none;
 }
 
 div.versioninfo {

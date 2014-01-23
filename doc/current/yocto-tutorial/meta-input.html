@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,15 +7,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>4. Bitbake Metadata &mdash; TQ Systems Community BSP 1.x-current</title>
+    <title>4. Bitbake Metadata &mdash; TQ Systems Community BSP 1.x-g476b0ea documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/ansi-color.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.x-current',
+        VERSION:     '1.x-g476b0ea',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="top" title="TQ Systems Community BSP 1.x-g476b0ea documentation" href="../index.html" />
     <link rel="up" title="TQ Systems Yocto Project Tutorial" href="index.html" />
     <link rel="next" title="5. Creating a new Layer" href="layer.html" />
     <link rel="prev" title="3. Yocto Architecture" href="arch.html" /> 
@@ -42,7 +42,7 @@
              accesskey="P">previous</a> |</li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" accesskey="U">TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
       </ul>
@@ -122,24 +122,25 @@ trees, traversed by BitBake.</li>
 </ul>
 <div class="section" id="build-s-local-configuration-file-build-conf-local-conf">
 <h3>4.2.1. Build&#8217;s local configuration file <tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt><a class="headerlink" href="#build-s-local-configuration-file-build-conf-local-conf" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><pre>MACHINE ??= 'tqma35'
-DISTRO ?= 'poky'
-#PACKAGE_CLASSES ?= "package_rpm"
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
-USER_CLASSES ?= "buildstats image-mklibs image-prelink"
-PATCHRESOLVE = "noop"
-BB_DISKMON_DIRS = "\
+<div class="highlight-python"><div class="highlight"><pre>MACHINE ??= &#39;tqma35&#39;
+DISTRO ?= &#39;poky&#39;
+#PACKAGE_CLASSES ?= &quot;package_rpm&quot;
+EXTRA_IMAGE_FEATURES = &quot;debug-tweaks&quot;
+USER_CLASSES ?= &quot;buildstats image-mklibs image-prelink&quot;
+PATCHRESOLVE = &quot;noop&quot;
+BB_DISKMON_DIRS = &quot;\
     STOPTASKS,${TMPDIR},1G,100K \
     STOPTASKS,${DL_DIR},1G,100K \
     STOPTASKS,${SSTATE_DIR},1G,100K \
     ABORT,${TMPDIR},100M,1K \
     ABORT,${DL_DIR},100M,1K \
-    ABORT,${SSTATE_DIR},100M,1K"
-CONF_VERSION = "1"
+    ABORT,${SSTATE_DIR},100M,1K&quot;
+CONF_VERSION = &quot;1&quot;
 
-BB_NUMBER_THREADS = '4'
-PARALLEL_MAKE = '-j 4'
-ACCEPT_FSL_EULA = ""</pre>
+BB_NUMBER_THREADS = &#39;4&#39;
+PARALLEL_MAKE = &#39;-j 4&#39;
+ACCEPT_FSL_EULA = &quot;&quot;
+</pre></div>
 </div>
 <p>Important variables:</p>
 <ul class="simple">
@@ -150,9 +151,10 @@ of threads when baking and compiling.</li>
 </div>
 <div class="section" id="build-s-local-configuration-file-build-conf-site-conf">
 <h3>4.2.2. Build&#8217;s local configuration file <tt class="docutils literal"><span class="pre">build/conf/site.conf</span></tt><a class="headerlink" href="#build-s-local-configuration-file-build-conf-site-conf" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><pre>SCONF_VERSION = "1"
-BSPDIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../..')}"
-DL_DIR = "${BSPDIR}/downloads/"</pre>
+<div class="highlight-python"><div class="highlight"><pre>SCONF_VERSION = &quot;1&quot;
+BSPDIR := &quot;${@os.path.abspath(os.path.dirname(d.getVar(&#39;FILE&#39;, True)) + &#39;/../..&#39;)}&quot;
+DL_DIR = &quot;${BSPDIR}/downloads/&quot;
+</pre></div>
 </div>
 <p>Important variables:</p>
 <ul class="simple">
@@ -162,39 +164,43 @@ folder, so data can be reused.</li>
 </div>
 <div class="section" id="build-s-layer-configuration-file-build-conf-bblayers-conf">
 <h3>4.2.3. Build&#8217;s layer configuration file <tt class="docutils literal"><span class="pre">build/conf/bblayers.conf</span></tt><a class="headerlink" href="#build-s-layer-configuration-file-build-conf-bblayers-conf" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Automatically created by the <strong class="program">setup-environment</strong> script (see
-section <a class="reference internal" href="build-and-boot.html#build-and-boot"><em>Build and Boot your TQ Systems Yocto Image</em></a>)</li>
-<li>Only modified when adding a new layer:</li>
-</ul>
-<div class="highlight-python"><pre>LCONF_VERSION = "6"
+<ul>
+<li><p class="first">Automatically created by the <strong class="program">setup-environment</strong> script (see
+section <a class="reference internal" href="build-and-boot.html#build-and-boot"><em>Build and Boot your TQ Systems Yocto Image</em></a>)</p>
+</li>
+<li><p class="first">Only modified when adding a new layer:</p>
+<div class="highlight-python"><div class="highlight"><pre>LCONF_VERSION = &quot;6&quot;
 
-BBPATH = "${TOPDIR}"
-BSPDIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../..')}"
+BBPATH = &quot;${TOPDIR}&quot;
+BSPDIR := &quot;${@os.path.abspath(os.path.dirname(d.getVar(&#39;FILE&#39;, True)) + &#39;/../..&#39;)}&quot;
 
-BBFILES ?= ""
-BBLAYERS = " \
+BBFILES ?= &quot;&quot;
+BBLAYERS = &quot; \
   ${BSPDIR}/sources/poky/meta \
   ${BSPDIR}/sources/poky/meta-yocto \
   \
   ${BSPDIR}/sources/meta-fsl-arm \
   \
   ${BSPDIR}/sources/meta-tqs-arm \
-"</pre>
+&quot;
+</pre></div>
 </div>
+</li>
+</ul>
 </div>
 <div class="section" id="layer-configuration-file-source-meta-tqs-arm-conf-layer-conf">
 <h3>4.2.4. Layer configuration file <tt class="docutils literal"><span class="pre">source/meta-tqs-arm/conf/layer.conf</span></tt><a class="headerlink" href="#layer-configuration-file-source-meta-tqs-arm-conf-layer-conf" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><pre># We have a conf and classes directory, add to BBPATH
-BBPATH .= ":${LAYERDIR}"
+<div class="highlight-python"><div class="highlight"><pre># We have a conf and classes directory, add to BBPATH
+BBPATH .= &quot;:${LAYERDIR}&quot;
 
 # We have a packages directory, add to BBFILES
-BBFILES += "${LAYERDIR}/recipes-*/*/*.bb \
-            ${LAYERDIR}/recipes-*/*/*.bbappend"
+BBFILES += &quot;${LAYERDIR}/recipes-*/*/*.bb \
+            ${LAYERDIR}/recipes-*/*/*.bbappend&quot;
 
-BBFILE_COLLECTIONS += "tqs-arm"
-BBFILE_PATTERN_tqs-arm := "^${LAYERDIR}/"
-BBFILE_PRIORITY_tqs-arm = "6"</pre>
+BBFILE_COLLECTIONS += &quot;tqs-arm&quot;
+BBFILE_PATTERN_tqs-arm := &quot;^${LAYERDIR}/&quot;
+BBFILE_PRIORITY_tqs-arm = &quot;6&quot;
+</pre></div>
 </div>
 <p>Important variables:</p>
 <ul class="simple">
@@ -205,7 +211,7 @@ BBFILE_PRIORITY_tqs-arm = "6"</pre>
 </div>
 <div class="section" id="machine-configuration-file-meta-tqs-arm-conf-tqma35-conf">
 <h3>4.2.5. Machine configuration file: <tt class="docutils literal"><span class="pre">meta-tqs-arm/conf/tqma35.conf</span></tt><a class="headerlink" href="#machine-configuration-file-meta-tqs-arm-conf-tqma35-conf" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><pre>#@TYPE: Machine
+<div class="highlight-python"><div class="highlight"><pre>#@TYPE: Machine
 #@NAME: TQ System i.MX35 Embedded module (tqma35)
 #@SOC: i.MX35
 #@DESCRIPTION: Machine configuration for TQ System i.MX35 Embedded module (tqma35)
@@ -214,20 +220,21 @@ include conf/machine/include/soc-family.inc
 include conf/machine/include/imx-base.inc
 include conf/machine/include/tune-arm1136jf-s.inc
 
-SOC_FAMILY = "mx3:mx35"
+SOC_FAMILY = &quot;mx3:mx35&quot;
 
-PREFERRED_VERSION_udev_mx3 = "172"
+PREFERRED_VERSION_udev_mx3 = &quot;172&quot;
 
-PREFERRED_PROVIDER_virtual/kernel_mx3 = "linux-tqs"
-PREFERRED_PROVIDER_u-boot = "u-boot-tqs"
+PREFERRED_PROVIDER_virtual/kernel_mx3 = &quot;linux-tqs&quot;
+PREFERRED_PROVIDER_u-boot = &quot;u-boot-tqs&quot;
 
-UBOOT_MACHINE = "TQMa35_config"
-UBOOT_SUFFIX = "bin"
-UBOOT_MAKE_TARGET = "u-boot.${UBOOT_SUFFIX}"
+UBOOT_MACHINE = &quot;TQMa35_config&quot;
+UBOOT_SUFFIX = &quot;bin&quot;
+UBOOT_MAKE_TARGET = &quot;u-boot.${UBOOT_SUFFIX}&quot;
 
-SERIAL_CONSOLE = "115200 ttymxc0"
+SERIAL_CONSOLE = &quot;115200 ttymxc0&quot;
 
-MACHINE_FEATURES += "ext2 ext3 screen"</pre>
+MACHINE_FEATURES += &quot;ext2 ext3 screen&quot;
+</pre></div>
 </div>
 <p>[<a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm/tree/conf/machine/include/imx-base.inc">conf/machine/include/imx-base.inc</a>] (from the <cite>meta-fsl-arm</cite> layer)</p>
 <p>Important variables:</p>
@@ -268,20 +275,21 @@ kernel more compatible version 172.</li>
 </div>
 <div class="section" id="machine-configuration-file-meta-tqs-arm-conf-qemuarmv6-conf">
 <h3>4.2.6. Machine configuration file: <tt class="docutils literal"><span class="pre">meta-tqs-arm/conf/qemuarmv6.conf</span></tt><a class="headerlink" href="#machine-configuration-file-meta-tqs-arm-conf-qemuarmv6-conf" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><pre>#@TYPE: Machine
+<div class="highlight-python"><div class="highlight"><pre>#@TYPE: Machine
 #@NAME: arm_versatile_1136jfs
 #@DESCRIPTION: arm_versatile_1136jfs
 
 require conf/machine/include/qemu.inc
 require conf/machine/include/tune-arm1136jf-s.inc
 
-PREFERRED_VERSION_udev = "172"
+PREFERRED_VERSION_udev = &quot;172&quot;
 
-PREFERRED_PROVIDER_virtual/kernel = "linux-tqs"
+PREFERRED_PROVIDER_virtual/kernel = &quot;linux-tqs&quot;
 
-KERNEL_IMAGETYPE = "zImage"
+KERNEL_IMAGETYPE = &quot;zImage&quot;
 
-SERIAL_CONSOLE = "115200 ttyAMA0"</pre>
+SERIAL_CONSOLE = &quot;115200 ttyAMA0&quot;
+</pre></div>
 </div>
 <p>[<a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta/conf/machine/include/qemu.inc">conf/machine/include/qemu.inc</a>] (from the <cite>poky/meta</cite> layer)</p>
 <p>Important variables:</p>
@@ -328,7 +336,7 @@ kernel more compatible version 172.</li>
              >previous</a> |</li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" >TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
       </ul>

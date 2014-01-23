@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,15 +7,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. Contributing to the TQ Systems Yocto Project &mdash; TQ Systems Community BSP 1.x-current</title>
+    <title>8. Contributing to the TQ Systems Yocto Project &mdash; TQ Systems Community BSP 1.x-g476b0ea documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/ansi-color.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.x-current',
+        VERSION:     '1.x-g476b0ea',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="top" title="TQ Systems Community BSP 1.x-g476b0ea documentation" href="../index.html" />
     <link rel="up" title="TQ Systems Yocto Project Tutorial" href="index.html" />
     <link rel="prev" title="7. Building the Kernel Manually" href="building-kernel.html" /> 
   </head>
@@ -38,7 +38,7 @@
              accesskey="P">previous</a></li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" accesskey="U">TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
       </ul>
@@ -68,54 +68,63 @@ what your contribution is (bug fixing or new metadata), contributions
 are sent through patches to a community list. Many eyes will look into
 your patch and at some point it is either rejected or accepted. Follow
 these steps to contribute:</p>
-<ul class="simple">
-<li>Make sure you have previously configured your personal info:</li>
-</ul>
-<div class="highlight-python"><pre>$ git config --global user.name "Your Name Here"
-$ git config --global user.email "your_email@example.com"</pre>
+<ul>
+<li><p class="first">Make sure you have previously configured your personal info:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git config --global user.name &quot;Your Name Here&quot;
+$ git config --global user.email &quot;your_email@example.com&quot;
+</pre></div>
 </div>
-<ul class="simple">
-<li>Download <tt class="docutils literal"><span class="pre">master</span></tt> branches:</li>
+</li>
 </ul>
-<div class="highlight-python"><pre>tqs-community-bsp $  repo init \
-    -u git://github.com/lipro/tqs-community-bsp-platform \
-    -b master</pre>
+<ul>
+<li><p class="first">Download <tt class="docutils literal"><span class="pre">master</span></tt> branches:</p>
+<div class="highlight-python"><div class="highlight"><pre>tqs-community-bsp $  repo init \
+  -u git://github.com/lipro/tqs-community-bsp-platform \
+  -b master
+</pre></div>
 </div>
-<ul class="simple">
-<li>Update:</li>
+</li>
+<li><p class="first">Update:</p>
+<div class="highlight-python"><div class="highlight"><pre>tqs-community-bsp $ repo sync
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create local branches so your work is <em>not</em> done on master:</p>
+<div class="highlight-python"><div class="highlight"><pre>tqs-community-bsp $ repo start &lt;branch name&gt; --all
+</pre></div>
+</div>
+</li>
 </ul>
-<div class="highlight-python"><pre>tqs-community-bsp $ repo sync</pre>
-</div>
-<ul class="simple">
-<li>Create local branches so your work is <em>not</em> done on master:</li>
-</ul>
-<div class="highlight-python"><pre>tqs-community-bsp $ repo start &lt;branch name&gt; --all</pre>
-</div>
 <p>Where <tt class="docutils literal"><span class="pre">&lt;branch</span> <span class="pre">name&gt;</span></tt> is any name you want to give to your local
 branch (e.g. <tt class="docutils literal"><span class="pre">fix_uboot_recipe</span></tt>, <tt class="docutils literal"><span class="pre">new_gstreamer_recipe</span></tt>, etc.).</p>
-<ul class="simple">
-<li>Make your changes in any TQ Systems related folder (e.g.
+<ul>
+<li><p class="first">Make your changes in any TQ Systems related folder (e.g.
 sources/meta-tqs-arm). In case you modified a recipe
 (<tt class="docutils literal"><span class="pre">.bb</span></tt>) or include (<tt class="docutils literal"><span class="pre">.inc</span></tt>) file, do not forget to
 <em>bump</em> (increase the value by one) either the <tt class="docutils literal"><span class="pre">PR</span></tt> or
-<tt class="docutils literal"><span class="pre">INC_PR</span></tt> value.</li>
-<li>Commit your changes using <tt class="docutils literal"><span class="pre">git</span></tt>. In this example we assume your
-change is on <tt class="docutils literal"><span class="pre">meta-tqs-arm</span></tt> folder:</li>
-</ul>
-<div class="highlight-python"><pre>sources/meta-tqs-arm $ git add &lt;file 1&gt; &lt;file 2&gt;
-sources/meta-tqs-arm $ git commit</pre>
+<tt class="docutils literal"><span class="pre">INC_PR</span></tt> value.</p>
+</li>
+<li><p class="first">Commit your changes using <tt class="docutils literal"><span class="pre">git</span></tt>. In this example we assume your
+change is on <tt class="docutils literal"><span class="pre">meta-tqs-arm</span></tt> folder:</p>
+<div class="highlight-python"><div class="highlight"><pre>sources/meta-tqs-arm $ git add &lt;file 1&gt; &lt;file 2&gt;
+sources/meta-tqs-arm $ git commit
+</pre></div>
 </div>
+</li>
+</ul>
 <p>On the commit&#8217;s log, the title must start with the filename change
 or introduced, then a brief description of the patch&#8217;s goal,
 following with a long description. Make sure you follow the
 standards (type <strong class="program">git log &#8211;pretty=oneline</strong> to see previous
 commits).</p>
-<ul class="simple">
-<li>Create a patch:</li>
-</ul>
-<div class="highlight-python"><pre>sources/meta-tqs-arm $ git format-patch -s \
-    --subject-prefix='meta-tqs-arm][PATCH' -1</pre>
+<ul>
+<li><p class="first">Create a patch:</p>
+<div class="highlight-python"><div class="highlight"><pre>sources/meta-tqs-arm $ git format-patch -s \
+  --subject-prefix=&#39;meta-tqs-arm][PATCH&#39; -1
+</pre></div>
 </div>
+</li>
+</ul>
 <p>Where the last parameter (<tt class="docutils literal"><span class="pre">-1</span></tt>) indicate to patch last commit. In
 case you want to create patches for older commits, just indicate the
 correct index. If your patch is done in other folder, just make sure
@@ -123,19 +132,19 @@ you change the <tt class="docutils literal"><span class="pre">--subject-prefix</
 <ul class="simple">
 <li>Send your patch or patches with:</li>
 </ul>
-<div class="highlight-python"><pre>sources/meta-tqs-arm $ git send-email \
-    --to linz@li-pro.net &lt;patch&gt;</pre>
-</div>
 <p>Where <tt class="docutils literal"><span class="pre">&lt;patch&gt;</span></tt> is the file created by <strong class="program">git format-patch</strong>.</p>
-<ul class="simple">
-<li>Keep track of patch&#8217;s responses on the mailing list. In case you need
+<ul>
+<li><p class="first">Keep track of patch&#8217;s responses on the mailing list. In case you need
 to rework your patch, repeat the steps but this time the patch&#8217;s
-subject changes to <tt class="docutils literal"><span class="pre">--subject-prefix='meta-tqs-*][PATCH</span> <span class="pre">v2'</span></tt>.</li>
-<li>Once your patch has been approved, you can delete your working
-branches:</li>
-</ul>
-<div class="highlight-python"><pre>tqs-community-bsp $ repo abandon &lt;branch name&gt;</pre>
+subject changes to <tt class="docutils literal"><span class="pre">--subject-prefix='meta-tqs-*][PATCH</span> <span class="pre">v2'</span></tt>.</p>
+</li>
+<li><p class="first">Once your patch has been approved, you can delete your working
+branches:</p>
+<div class="highlight-python"><div class="highlight"><pre>tqs-community-bsp $ repo abandon &lt;branch name&gt;
+</pre></div>
 </div>
+</li>
+</ul>
 </div>
 
 
@@ -152,7 +161,7 @@ branches:</li>
              >previous</a></li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" >TQ Systems Yocto Project Tutorial</a> &raquo;</li> 
       </ul>

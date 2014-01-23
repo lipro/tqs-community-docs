@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,15 +7,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1. BSP Scope &mdash; TQ Systems Community BSP 1.x-current</title>
+    <title>1. BSP Scope &mdash; TQ Systems Community BSP 1.x-g476b0ea documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc-ext.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/ansi-color.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.x-current',
+        VERSION:     '1.x-g476b0ea',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="TQ Systems Community BSP 1.x-current" href="../index.html" />
+    <link rel="top" title="TQ Systems Community BSP 1.x-g476b0ea documentation" href="../index.html" />
     <link rel="up" title="TQ Systems Community BSP Release Notes" href="index.html" />
     <link rel="next" title="2. Linux Kernel" href="kernel-linux.html" />
     <link rel="prev" title="TQ Systems Community BSP Release Notes" href="index.html" /> 
@@ -42,7 +42,7 @@
              accesskey="P">previous</a> |</li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" accesskey="U">TQ Systems Community BSP Release Notes</a> &raquo;</li> 
       </ul>
@@ -82,26 +82,30 @@
 Please, see in next table the complete supported board list.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="26%" />
-<col width="52%" />
-<col width="10%" />
-<col width="12%" />
+<col width="23%" />
+<col width="47%" />
+<col width="9%" />
+<col width="9%" />
+<col width="11%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Machine</th>
 <th class="head">Name</th>
+<th class="head">CoM</th>
 <th class="head">SoC</th>
 <th class="head">Layer</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>qemuarmv6</td>
-<td>arm_versatile_1136jfs</td>
-<td>&nbsp;</td>
+<td>ARM-Versatile PB (ARM1136JFS)</td>
+<td>qemuarmv6</td>
+<td>QEMU</td>
 <td>meta-tqs-arm</td>
 </tr>
 <tr class="row-odd"><td>tqma35</td>
-<td>TQ System i.MX35 Embedded module (tqma35)</td>
+<td>TQ System i.MX35 Embedded module</td>
+<td>tqma35</td>
 <td>i.MX35</td>
 <td>meta-tqs-arm</td>
 </tr>
@@ -128,22 +132,30 @@ Please, see in next table the complete supported board list.</p>
   <path d="M 75 126 L 187 126 A8,8 0 0 1 195 134 L 195 158 A8,8 0 0 1 187 166 L 75 166 A8,8 0 0 1 67 158 L 67 134 A8,8 0 0 1 75 126" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
   <path d="M 267 126 L 379 126 A8,8 0 0 1 387 134 L 387 158 A8,8 0 0 1 379 166 L 267 166 A8,8 0 0 1 259 158 L 259 134 A8,8 0 0 1 267 126" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
   <path d="M 267 206 L 379 206 A8,8 0 0 1 387 214 L 387 238 A8,8 0 0 1 379 246 L 267 246 A8,8 0 0 1 259 238 L 259 214 A8,8 0 0 1 267 206" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
-  <path d="M 72 40 L 184 40 A8,8 0 0 1 192 48 L 192 72 A8,8 0 0 1 184 80 L 72 80 A8,8 0 0 1 64 72 L 64 48 A8,8 0 0 1 72 40" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
-  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="bold" x="81" y="66">meta-tqs-arm</text>
+  <path d="M 72 40 L 184 40 A8,8 0 0 1 192 48 L 192 72 A8,8 0 0 1 184 80 L 72 80 A8,8 0 0 1 64 72 L 64 48 A8,8 0 0 1 72 40" fill="rgb(255,255,255)" stroke="rgb(255,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="14" font-style="normal" font-weight="bold" x="74" y="67">meta-tqs-arm</text>
+  <ellipse cx="64" cy="40" fill="pink" rx="12" ry="12" stroke="rgb(255,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="14" font-style="normal" font-weight="bold" x="57" y="45">M</text>
   <path d="M 72 120 L 184 120 A8,8 0 0 1 192 128 L 192 152 A8,8 0 0 1 184 160 L 72 160 A8,8 0 0 1 64 152 L 64 128 A8,8 0 0 1 72 120" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
   <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="90" y="145">meta-fsl-arm</text>
+  <ellipse cx="64" cy="120" fill="pink" rx="12" ry="12" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="56" y="125">DY</text>
   <path d="M 264 120 L 376 120 A8,8 0 0 1 384 128 L 384 152 A8,8 0 0 1 376 160 L 264 160 A8,8 0 0 1 256 152 L 256 128 A8,8 0 0 1 264 120" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
   <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="288" y="147">poky-meta</text>
+  <ellipse cx="256" cy="120" fill="pink" rx="12" ry="12" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="248" y="125">DY</text>
   <path d="M 264 200 L 376 200 A8,8 0 0 1 384 208 L 384 232 A8,8 0 0 1 376 240 L 264 240 A8,8 0 0 1 256 232 L 256 208 A8,8 0 0 1 264 200" fill="rgb(255,255,255)" stroke="rgb(0,0,0)" />
   <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="270" y="227">poky-meta-yocto</text>
+  <ellipse cx="256" cy="200" fill="pink" rx="12" ry="12" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sansserif" font-size="12" font-style="normal" font-weight="normal" x="248" y="205">DY</text>
   <path d="M 128 80 L 128 112" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="128,119 124,112 132,112 128,119" stroke="rgb(0,0,0)" />
-  <path d="M 192 140 L 248 140" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="255,140 248,136 248,144 255,140" stroke="rgb(0,0,0)" />
   <path d="M 192 140 L 224 140" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 224 140 L 224 220" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 224 220 L 248 220" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="255,220 248,216 248,224 255,220" stroke="rgb(0,0,0)" />
+  <path d="M 192 140 L 248 140" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="255,140 248,136 248,144 255,140" stroke="rgb(0,0,0)" />
   <text fill="rgb(0,0,0)" font-family="sansserif" font-size="16" font-style="normal" font-weight="normal" x="108" y="36">PRI:6</text>
   <text fill="rgb(0,0,0)" font-family="sansserif" font-size="16" font-style="normal" font-weight="normal" x="204" y="116">PRI:5</text>
 </svg>
@@ -151,26 +163,42 @@ Please, see in next table the complete supported board list.</p>
     </svg></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="20%" />
+<col width="40%" />
+<col width="40%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Name</th>
+<tr class="row-odd"><th class="head">No</th>
+<th class="head">Name</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>meta-tqs-arm</td>
-<td>OpenEmbedded/Yocto BSP layer for TQ Systems ARM based platforms (<a class="reference external" href="index.html">this</a>).</td>
+<tr class="row-even"><td>M</td>
+<td>meta-tqs-arm</td>
+<td>OE/Yocto BSP layer for TQ Systems ARM based platforms (<a class="reference external" href="index.html">this</a>).</td>
 </tr>
-<tr class="row-odd"><td>meta-fsl-arm</td>
-<td><a class="reference external" href="https://github.com/Freescale/meta-fsl-arm">OpenEmbedded/Yocto BSP layer for Freescale&#8217;s ARM platforms.</a></td>
+<tr class="row-odd"><td>DY</td>
+<td>meta-fsl-arm</td>
+<td>OE/Yocto BSP layer for Freescale&#8217;s ARM platforms: <a class="reference external" href="http://freescale.github.io/">DOC</a>, <a class="reference external" href="https://github.com/Freescale/meta-fsl-arm">GIT</a></td>
 </tr>
-<tr class="row-even"><td>poky-meta</td>
-<td><a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta">Poky Build Tool and Metadata.</a></td>
+<tr class="row-even"><td>DY</td>
+<td>poky-meta</td>
+<td>Poky Build Tool and Metadata: <a class="reference external" href="https://www.yoctoproject.org/documentation">DOC</a>, <a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta">GIT</a></td>
 </tr>
-<tr class="row-odd"><td>poky-meta-yocto</td>
-<td><a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta-yocto">Yocto Build Tool and Metadata.</a></td>
+<tr class="row-odd"><td>DY</td>
+<td>poky-meta-yocto</td>
+<td>Yocto Build Tool and Metadata: <a class="reference external" href="https://www.yoctoproject.org/documentation">DOC</a>, <a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/meta-yocto">GIT</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">M:</th><td class="field-body">Master branch</td>
+</tr>
+<tr class="field-even field"><th class="field-name">DY:</th><td class="field-body">Dylan branch</td>
 </tr>
 </tbody>
 </table>
@@ -194,7 +222,7 @@ Please, see in next table the complete supported board list.</p>
              >previous</a> |</li>
     <li><a href="http://lipro.github.io/tqs-community-docs/">TQ Systems Community BSP</a> &raquo;</li>
     
-        <li><a href="../index.html">TQ Systems Community BSP 1.x-current</a> &raquo;</li>
+        <li><a href="../index.html">TQ Systems Community BSP 1.x-g476b0ea documentation</a> &raquo;</li>
 
           <li><a href="index.html" >TQ Systems Community BSP Release Notes</a> &raquo;</li> 
       </ul>
