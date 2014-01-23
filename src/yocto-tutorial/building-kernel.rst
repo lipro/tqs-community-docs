@@ -71,7 +71,7 @@ Building the Kernel Manually
 * To Test your changes, insert the SD into your host and copy
   the ``uImage`` into the first partition:
 
-  .. todo::
+  .. warning::
 
      The issue `SD Card preperation` with new Linux kernel needs
      to be evaluated! Do not yet apply this description!

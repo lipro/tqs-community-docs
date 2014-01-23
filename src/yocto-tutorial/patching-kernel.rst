@@ -77,7 +77,7 @@ package you want to patch.
   partition. Do not forget to unmount the partition before removing the
   card!
 
-  .. todo::
+  .. warning::
 
      The issue `SD Card preperation` with new Linux kernel needs
      to be evaluated! Do not yet apply this description!

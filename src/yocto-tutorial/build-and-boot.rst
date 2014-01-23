@@ -68,7 +68,7 @@ Build and Boot your TQ Systems Yocto Image
 
 * Flash SD Card for machines other than :option:`qemuarmv6`:
 
-  .. todo::
+  .. warning::
 
      The issue `Flash SD Card` needs to be evaluated!
      Do not yet apply this description!
